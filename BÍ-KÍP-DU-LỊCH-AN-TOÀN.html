@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="vi" dir="ltr"><head><title>BÍ KÍP DU LỊCH AN TOÀN</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Tạo và Như Ý cần đọc"/><meta property="og:title" content="BÍ KÍP DU LỊCH AN TOÀN"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="BÍ KÍP DU LỊCH AN TOÀN"/><meta name="twitter:description" content="Mọi người đã plan những chuyến đi mới trong năm 2024 chưa nè ! Bất cứ hành trình nào cũng có những niềm vui, trải nghiệm và những khó khăn, rủi ro đôi khi là không lường trước được."/><meta property="og:description" content="Mọi người đã plan những chuyến đi mới trong năm 2024 chưa nè ! Bất cứ hành trình nào cũng có những niềm vui, trải nghiệm và những khó khăn, rủi ro đôi khi là không lường trước được."/><meta property="og:image:alt" content="Mọi người đã plan những chuyến đi mới trong năm 2024 chưa nè ! Bất cứ hành trình nào cũng có những niềm vui, trải nghiệm và những khó khăn, rủi ro đôi khi là không lường trước được."/><meta property="og:image" content="https://duong-tao.github.io/phan-tich-bai-viet/static/og-image.png"/><meta property="og:image:url" content="https://duong-tao.github.io/phan-tich-bai-viet/static/og-image.png"/><meta name="twitter:image" content="https://duong-tao.github.io/phan-tich-bai-viet/static/og-image.png"/><meta property="og:image:type" content="image/.png"/><meta property="twitter:domain" content="duong-tao.github.io/phan-tich-bai-viet"/><meta property="og:url" content="https://duong-tao.github.io/phan-tich-bai-viet/BÍ-KÍP-DU-LỊCH-AN-TOÀN"/><meta property="twitter:url" content="https://duong-tao.github.io/phan-tich-bai-viet/BÍ-KÍP-DU-LỊCH-AN-TOÀN"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="Mọi người đã plan những chuyến đi mới trong năm 2024 chưa nè ! Bất cứ hành trình nào cũng có những niềm vui, trải nghiệm và những khó khăn, rủi ro đôi khi là không lường trước được."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiRzpcXFRPT0xTXFxxdWFydHpcXHF1YXJ0elxcY29tcG9uZW50c1xcc3R5bGVzIiwic291cmNlcyI6WyJtZXJtYWlkLmlubGluZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFHRjtFQUNFOzs7QUFLRjtFQUNFO0VBQ0E7OztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFOztBQUlGO0VBQ0U7RUFDQTtFQUNBIiwic291cmNlc0NvbnRlbnQiOlsiLmV4cGFuZC1idXR0b24ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsb2F0OiByaWdodDtcbiAgcGFkZGluZzogMC40cmVtO1xuICBtYXJnaW46IDAuM3JlbTtcbiAgcmlnaHQ6IDA7IC8vIE5PVEU6IHJpZ2h0IHdpbGwgYmUgc2V0IGluIG1lcm1haWQuaW5saW5lLnRzXG4gIGNvbG9yOiB2YXIoLS1ncmF5KTtcbiAgYm9yZGVyLWNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICBib3JkZXI6IDFweCBzb2xpZDtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBvcGFjaXR5OiAwO1xuICB0cmFuc2l0aW9uOiAwLjJzO1xuXG4gICYgPiBzdmcge1xuICAgIGZpbGw6IHZhcigtLWxpZ2h0KTtcbiAgICBmaWx0ZXI6IGNvbnRyYXN0KDAuMyk7XG4gIH1cblxuICAmOmhvdmVyIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgYm9yZGVyLWNvbG9yOiB2YXIoLS1zZWNvbmRhcnkpO1xuICB9XG5cbiAgJjpmb2N1cyB7XG4gICAgb3V0bGluZTogMDtcbiAgfVxufVxuXG5wcmUge1xuICAmOmhvdmVyID4gLmV4cGFuZC1idXR0b24ge1xuICAgIG9wYWNpdHk6IDE7XG4gICAgdHJhbnNpdGlvbjogMC4ycztcbiAgfVxufVxuXG4jbWVybWFpZC1jb250YWluZXIge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIGNvbnRhaW46IGxheW91dDtcbiAgei1pbmRleDogOTk5O1xuICBsZWZ0OiAwO1xuICB0b3A6IDA7XG4gIHdpZHRoOiAxMDB2dztcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgZGlzcGxheTogbm9uZTtcbiAgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDRweCk7XG4gIGJhY2tncm91bmQ6IHJnYmEoMCwgMCwgMCwgMC41KTtcblxuICAmLmFjdGl2ZSB7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB9XG5cbiAgJiA+ICNtZXJtYWlkLXNwYWNlIHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHRvcDogNTAlO1xuICAgIGxlZnQ6IDUwJTtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbiAgICBoZWlnaHQ6IDgwdmg7XG4gICAgd2lkdGg6IDgwdnc7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcblxuICAgICYgPiAubWVybWFpZC1jb250ZW50IHtcbiAgICAgIHBhZGRpbmc6IDJyZW07XG4gICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICB0cmFuc2Zvcm0tb3JpZ2luOiAwIDA7XG4gICAgICB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMC4xcyBlYXNlO1xuICAgICAgb3ZlcmZsb3c6IHZpc2libGU7XG4gICAgICBtaW4taGVpZ2h0OiAyMDBweDtcbiAgICAgIG1pbi13aWR0aDogMjAwcHg7XG5cbiAgICAgIHByZSB7XG4gICAgICAgIG1hcmdpbjogMDtcbiAgICAgICAgYm9yZGVyOiBub25lO1xuICAgICAgfVxuXG4gICAgICBzdmcge1xuICAgICAgICBtYXgtd2lkdGg6IG5vbmU7XG4gICAgICAgIGhlaWdodDogYXV0bztcbiAgICAgIH1cbiAgICB9XG5cbiAgICAmID4gLm1lcm1haWQtY29udHJvbHMge1xuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgYm90dG9tOiAyMHB4O1xuICAgICAgcmlnaHQ6IDIwcHg7XG4gICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgZ2FwOiA4cHg7XG4gICAgICBwYWRkaW5nOiA4cHg7XG4gICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgYm9yZGVyLXJhZGl1czogNnB4O1xuICAgICAgYm94LXNoYWRvdzogMCAycHggNHB4IHJnYmEoMCwgMCwgMCwgMC4xKTtcbiAgICAgIHotaW5kZXg6IDI7XG5cbiAgICAgIC5tZXJtYWlkLWNvbnRyb2wtYnV0dG9uIHtcbiAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgIHdpZHRoOiAzMnB4O1xuICAgICAgICBoZWlnaHQ6IDMycHg7XG4gICAgICAgIHBhZGRpbmc6IDA7XG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgICAgY29sb3I6IHZhcigtLWRhcmspO1xuICAgICAgICBib3JkZXItcmFkaXVzOiA0cHg7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgZm9udC1zaXplOiAxNnB4O1xuICAgICAgICBmb250LWZhbWlseTogdmFyKC0tYm9keUZvbnQpO1xuICAgICAgICB0cmFuc2l0aW9uOiBhbGwgMC4ycyBlYXNlO1xuXG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIH1cblxuICAgICAgICAmOmFjdGl2ZSB7XG4gICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDFweCk7XG4gICAgICAgIH1cblxuICAgICAgICAvLyBTdHlsZSB0aGUgcmVzZXQgYnV0dG9uIGRpZmZlcmVudGx5XG4gICAgICAgICY6bnRoLWNoaWxkKDIpIHtcbiAgICAgICAgICB3aWR0aDogYXV0bztcbiAgICAgICAgICBwYWRkaW5nOiAwIDEycHg7XG4gICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG4iXX0= */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://duong-tao.github.io/phan-tich-bai-viet/index.xml"/></head><body data-slug="BÍ-KÍP-DU-LỊCH-AN-TOÀN"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">Tạo và Như Ý cần đọc</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Tìm Kiếm</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Tìm kiếm thông tin" placeholder="Tìm kiếm thông tin"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Tối"><title>Tối</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Sáng"><title>Sáng</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Chế độ đọc"><title>Chế độ đọc</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="false" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-25"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Danh mục bài viết</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-25" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>BÍ KÍP DU LỊCH AN TOÀN</a></div></nav><h1 class="article-title">BÍ KÍP DU LỊCH AN TOÀN</h1><p show-comma="true" class="content-meta"><time datetime="2024-07-22T17:00:00.000Z">23 thg 7, 2024</time><span>đọc 12 phút</span></p><ul class="tags"><li><a href="./tags/clippings" class="internal tag-link">clippings</a></li><li><a href="./tags/analyzed" class="internal tag-link">analyzed</a></li></ul><div class="text-size" role="group" aria-label="Chọn cỡ chữ"><button data-size="small" title="Chữ nhỏ" aria-label="Chữ nhỏ"><span class="a-small">A</span><span class="lbl">Nhỏ</span></button><button data-size="medium" title="Chữ vừa" aria-label="Chữ vừa"><span class="a-medium">A</span><span class="lbl">Vừa</span></button><button data-size="large" title="Chữ lớn" aria-label="Chữ lớn"><span class="a-large">A</span><span class="lbl">Lớn</span></button></div></div></div><article class="popover-hint"><p><img src="./BÍ-KÍP-DU-LỊCH-AN-TOÀN.png" width="auto" height="auto" alt/></p>
+<p>Mọi người đã plan những chuyến đi mới trong năm 2024 chưa nè ! Bất cứ hành trình nào cũng có những niềm vui, trải nghiệm và những khó khăn, rủi ro đôi khi là không lường trước được. Thế nhưng những điều này không làm chùng bước những con người thích xê dịch, khám phá. Quan trọng là mình có đủ kiến thức và sự bình tĩnh để bảo vệ bản thân an toàn trên mọi chuyến đi không ?</p>
+<p>Dưới đây là một số điều lưu ý an toàn từ quyển First Time Around the World của The Rough Guide (Một quyển sách khá hay cho những bạn mới và đang xách ba lô đi) và một số Nhị thu thập kinh nghiệm từ bản thân qua các chuyến đi. Dĩ nhiên những nội dung phía dưới, tùy thuộc vào tình huống, đối tượng, bạn có thể lựa chọn thông tin, cách thức phù hợp.</p>
+<p>☘ Tìm hiểu tình hình an ninh, điều kiện an toàn, thiên tai…nơi bạn muốn đến thông qua</p>
+<ul>
+<li>
+<p>Những group du lịch facebook ( cả tiếng việt và tiếng anh)</p>
+</li>
+<li>
+<p>Fanpage facebook, IG</p>
+</li>
+<li>
+<p>Tripadvisor, lonelyplanet</p>
+</li>
+<li>
+<p>Sách guide book…</p>
+</li>
+<li>
+<p>Liên hệ Tourist office (trên FB hoặc email); Người bản địa (do quen trước trên FB, lần đầu đi Ladakh nhóm mình thường hay hỏi thông tin permit hay thời tiết với bạn tourguide kiêm photographer ở đấy)
+☘ Phòng tránh bị cướp, giật:</p>
+</li>
+<li>
+<p>Thận trọng và kín đáo, không thể hiện quá gây sự chú ý. Không khoa trương thiết bị đắt tiền, camera có thể bọc băng dính làm cũ kĩ hỏng hóc.</p>
+</li>
+<li>
+<p>Nên có 2 balo : 1 backpack đeo lưng (móc khóa , dây khóa), 1 balo đựng đồ quan trọng, thiết yếu để đi cả ngày (thường mang trước ngực nhất là nơi đông người), balo nên có nhìu ngăn nhỏ, túi bao tử cũng được khuyến khích.</p>
+</li>
+<li>
+<p>Không để tiền bạc, thẻ thanh toán cùng một chỗ. Không để 1 người trong nhóm giữ hết tiền quỹ.</p>
+</li>
+<li>
+<p>Ở Dorm (phòng ở tập thể) , Night train - tàu đêm: lồng tiền, thứ nhỏ + quan trọng vào bao gối, hoặc lấy balo làm gối luôn. Nếu ngủ ở sân bay hoặc trạm tàu nên dùng khóa dây chống cắt.</p>
+</li>
+<li>
+<p>Tập thói quen tránh ngồi bàn gần cửa ra vào hay lối đi trong quán cà phê, khu công cộng… kẻ trộm có thể giật đồ và bỏ chạy. Luồng balo dưới bàn, lồng dây quanh chân.</p>
+</li>
+</ul>
+<p>Không nhận đồ ăn, nước uống từ người lạ để tránh bị đánh thuốc mê.</p>
+<p>☘Tình huống bị mất cắp:</p>
+<ul>
+<li>
+<p>Ngay lập tức cancel credit card bằng phone or email; đi đến đồn cảnh sát gần nhất để trình báo; trình bày lãnh sự quán để làm passport mới; lên mạng download nhanh tờ khai dành cho Bảo hiểm du lịch và gọi công ty bảo hiểm du lịch của bạn để được hỗ trợ…</p>
+</li>
+<li>
+<p>Trong trường hợp này bạn sẽ thấy vô cùng thuận lợi nếu chuẩn bị sẵn: vài tấm hình passport, bản copy (passport, bảo hiểm du lịch, credit card, plan…gửi qua email, để có thể tải xuống nếu cần. Một vài tấm ảnh chụp đồ dùng trang thiết bị trong balo (để bằng chứng bồi thường cho hãng bảo hiểm )… Những lúc này, những hãng bảo hiểm quốc tế có ưu thế hơn hãng bảo hiểm nội địa nhỏ ở điểm hành động nhanh, hỗ trợ khách hàng kịp thời.</p>
+</li>
+</ul>
+<p>Bảo vệ sức khỏe trong suốt hành trình</p>
+<ul>
+<li>
+<p>Bạn nên chuẩn bị thuốc men đem theo như: panadol cho trường hợp đau đầu, sốt nhẹ…; thuốc tiêu hóa/tiêu chảy phòng trường hợp không quen thức ăn, bụng dạ khó chịu; thuốc bao tử với các bạn bị đau bao tử…</p>
+</li>
+<li>
+<p>Trường hợp không may bị nhiễm sốt xuất huyết, hay té chấn thương… thì bạn buộc phải đến bệnh viện nước sở tại để khám chữa và chắc mẩm là phải trả một con số khá cao ở nơi đất khách. Những lúc này thì bạn nên lấy đầy đủ hóa đơn khám chữa để về claim lại cho công ty bảo hiểm du lịch. Vậy mới thấy bảo hiểm du lịch rất có lợi… Lỡ xui rủi gặp chuyện nơi đất khách cũng được hỗ trợ nhanh chóng, đầy đủ như ở quê nhà.
+☘ Tránh bị quấy rồi tình dục</p>
+</li>
+<li>
+<p>Để tránh kích thích đối phương, các bạn nữ nên ăn mặc như người bản địa. Không nên nhìn chằm chằm vào người đàn ông lạ mặt. Ở Ấn Độ, điều đó được xem như là một sự kích thích.</p>
+</li>
+<li>
+<p>Tỏ ra thoải mái tự tin, ngay cả khi lạc đường, tránh bối rối hoang mang.</p>
+</li>
+<li>
+<p>Đeo nhẫn cưới giả, giống như bạn đã có gia đình.</p>
+</li>
+<li>
+<p>Nếu bị bám lấy, cố tìm cách tách ra, tạt vào shop nói chuyện với chủ cửa hàng, chỗ đông người, đồn cảnh sát, hoặc tìm sự trợ giúp của 1 người lạ có thể tin cậy như dân traveller hoặc phụ nữ (Một người bạn mình bị bám đuôi đã nhờ sự trợ giúp của bạn nam du lịch khác, bằng cách nhờ bạn giả làm một couple)</p>
+</li>
+<li>
+<p>Trong tình huống cấp bách thì tẩu là thượng sách, chạy và cầu cứu, học thế tự vệ đá đầu gối hoặc bộ phận tế nhị.</p>
+</li>
+<li>
+<p>Trang bị còi gây sự chú ý hoặc bình xịt hơi cay (một vài ý tưởng mang dao nhưng mình nghĩ nguy hiểm và bạo động lắm)
+☘ Sân bay:</p>
+</li>
+<li>
+<p>Hạn chế cầm dùm, giữ dùm, chuyển hộ bất cứ thứ gì từ người lạ tại sân bay hay gần khu vực biên giới</p>
+</li>
+<li>
+<p>Dùng thẻ “đồ dễ vỡ”: Các hành lý có dán thẻ “đồ dễ vỡ” thường được đặt ở phía trên và cho ra băng chuyền trả hành lý trước. Điều đó đồng nghĩa bạn có thể nhanh chóng lấy hành lý và ra khỏi sân bay. Các miếng dán này được bán rất nhiều trên mạng.</p>
+</li>
+<li>
+<p>Gỡ bỏ những dán mã vạch đã cũ trên hành lí, vali</p>
+</li>
+</ul>
+<p>☘ Thuê, mướn:</p>
+<ul>
+<li>
+<p>Bất cứ mọi chi trả hostel hay thuê xe, thiết bị nên xin hóa đơn nếu phải trả trước, phòng khi bị bắt trả sau vì ko thấy hóa đơn</p>
+</li>
+<li>
+<p>Thuê xe: Ngoài việc kiểm tra kỹ đèn, thắng, máy xe, xăng… để tránh trường hợp bị nhà thuê sau khi trả xe, kiếm cớ hư 1 bộ phận nào đó từ trước và bắt bạn chịu chi phí sửa chữa, có thể chụp vài tấm hình xe trước khi bạn thuê, chụp chi tiết các phần quan trọng và có chủ xe ở đó. Hoặc khi hư xe dọc đường hãy quay video lại tình hình để làm bằng chứng.</p>
+</li>
+</ul>
+<p>☘ Đổi tiền: Luôn tự tay kiểm tra đủ tiền trước khi rời khỏi quầy. Đừng tin vào màn đếm tiền của người đổi ở những khu chợ đen hay ko tên tuổi. Tốt nhất nên đổi tiền ở nơi uy tín.</p>
+<p>☘ Cảnh sát giả: Một đứa trẻ đến mà hỏi bạn đổi 1 ít tiền. Lúc sau, 1 người đàn ông bước tới, đưa nhanh bằng cảnh sát và giải thích số tiền bạn nhận từ đứa trẻ là tiền giả, bạn có trách nhiệm phải nộp lại cho cảnh sát đồng thời bị phạt vì tham gia trao đổi tiền giả. Trong khi bạn còn phân vân không biết thực hư thì 1 nhóm người trông rất hình sự đi đến và gây áp lực để bạn …</p>
+<ul>
+<li>Trong trường hợp này: Cố gắng nhìn kỹ bảng tên để chắc chắn dù biết là cảnh sát giả mạo, hãy vẫn vui vẻ yêu cầu được nộp phạt tại ngay đồn cảnh sát. Và đề nghị đi đến đó, dĩ nhiên trong trường hợp này ko có chiếc xe cảnh sát thật xuất hiện đâu.</li>
+</ul>
+<p>☘ Dàn cảnh</p>
+<p>Ai đó cố tình bắn mù tạt, tương ớt hoặc các loại sốt vào người để có cơ hội tiếp cận bạn. Sau đó, chúng sẽ vờ làm người tốt giúp chùi sạch vết bẩn rồi khi bạn lơ là cảnh giác, chúng sẽ khéo léo lấy luôn hành lý, tư trang của nạn nhân. Nếu rơi vào tình huống này, bạn hãy bình tĩnh và đừng rời mắt khỏi hành lý của mình.</p>
+<p>☘ Taxi</p>
+<ul>
+<li>
+<p>Luôn thỏa thuận mức giá ok với tài xế, trước khi lên taxi, hoặc sure meter được bật. Chú ý đơn vị tiền tệ, có thể show tờ tiền để tránh bị trả mệnnh giá cao hơn nếu bất đồng ngôn ngữ với tài xế</p>
+</li>
+<li>
+<p>Bạn trả hết tiền cho taxi và taxi bỏ chạy trước khi bạn kịp lấy hành lý phía sau. Giải quyết bằng cách lấy hành lý rồi mới trả tiền hoặc giữ lại 1 người ngồi trong xe nếu bạn đi trên 2 người.</p>
+</li>
+</ul>
+<p>Một đều vô cùng cần thiết không thể quên khi đối diện với tình huống khó khăn là : Hít 1 hơi thật sâu và mỉm cười bạn nha</p>
+<p>Chúc bạn luôn an toàn trên mỗi chuyến đi. Nếu bạn có “bí kíp” nào khác, đừng ngần ngại chia sẻ với Nhị và “đồng bọn” ở đây nhé.</p>
+<hr/>
+<h2 id="-phân-tích-bài-viết">🔍 Phân tích bài viết<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-phân-tích-bài-viết" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="-tóm-tắt-ý-chính">📌 Tóm tắt ý chính<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-tóm-tắt-ý-chính" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Bài viết tổng hợp kinh nghiệm du lịch an toàn của blogger Nhị Đặng, kết hợp từ sách “First Time Around the World” (Rough Guide) và trải nghiệm thực tế. Nội dung bao phủ 8 nhóm rủi ro: an ninh thông tin, trộm cướp, mất cắp, sức khỏe, quấy rối tình dục, sân bay, thuê mướn, taxi và các trò lừa đảo phổ biến. Triết lý xuyên suốt: chuẩn bị kỹ trước sẽ giúp xử lý bình tĩnh khi tình huống xấu xảy ra.</p>
+<h3 id="-insight--góc-nhìn-đa-chiều">💡 Insight &amp; Góc nhìn đa chiều<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-insight--góc-nhìn-đa-chiều" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Phần lớn rủi ro du lịch là có thể dự đoán được</strong>: Các chiêu lừa đảo (cảnh sát giả, dàn cảnh, taxi gian lận) tồn tại hàng chục năm và lặp lại ở nhiều quốc gia. Nắm được mô thức là đã tránh được 70% rủi ro.</li>
+<li><strong>Phụ nữ đi một mình chịu rủi ro bất cân xứng</strong>: Bài viết dành hẳn một phần riêng cho quấy rối tình dục — phản ánh thực tế là an toàn du lịch có giới tính, không phải vấn đề chung chung.</li>
+<li><strong>Bảo hiểm du lịch vẫn bị coi nhẹ ở Việt Nam</strong>: Nhiều người VN xem bảo hiểm du lịch là “lãng phí” cho đến khi vào viện ở nước ngoài với hóa đơn vài chục triệu — bài viết nhắc đến điều này rất thực tế.</li>
+<li><strong>Công nghệ làm thay đổi cách quản lý rủi ro</strong>: Khả năng cancel thẻ tín dụng qua app, lưu ảnh hộ chiếu trên cloud, nhóm Facebook du lịch địa phương — tất cả là lớp bảo vệ mới mà thế hệ trước không có.</li>
+</ul>
+<h3 id="-liên-hệ-việt-nam--cá-nhân">🇻🇳 Liên hệ Việt Nam &amp; cá nhân<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-liên-hệ-việt-nam--cá-nhân" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Người Việt đi du lịch nước ngoài tăng mạnh sau đại dịch (năm 2023-2024 đạt hơn 6 triệu lượt xuất cảnh du lịch), nhưng kiến thức an toàn chưa theo kịp tốc độ tăng trưởng này.</li>
+<li>Các điểm nóng mà du khách VN hay gặp vấn đề: Thái Lan (taxi không bật đồng hồ), Ấn Độ (quấy rối), Châu Phi và Đông Âu (cảnh sát giả, móc túi).</li>
+<li>Bảo hiểm du lịch quốc tế (PTI, Bảo Việt, AXA Travel) có gói từ 100-300k/tuần — rẻ hơn một bữa ăn nhà hàng nhưng phần lớn người VN vẫn bỏ qua.</li>
+<li>Kỹ năng “giả vờ tự tin khi lạc đường” rất thực tế: ở nhiều nước, trông có vẻ bối rối là tín hiệu mời gọi kẻ xấu tiếp cận.</li>
+</ul>
+<h3 id="️-phản-biện">⚖️ Phản biện<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#️-phản-biện" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Một số lời khuyên có thể bị diễn giải sai</strong>: “Ăn mặc như người bản địa để tránh quấy rối” — cần cẩn thận vì dễ bị hiểu là đổ lỗi nạn nhân. Thực tế ở nhiều nơi, phụ nữ bản địa ăn mặc kín vẫn bị quấy rối; vấn đề nằm ở thái độ của người quấy rối, không phải trang phục nạn nhân.</li>
+<li><strong>Bài viết thiếu phân loại theo điểm đến</strong>: Bí kíp cho Ấn Độ khác với Châu Âu, khác với Đông Nam Á. Danh sách chung chung có thể tạo cảm giác an toàn giả tạo nếu áp dụng không đúng bối cảnh.</li>
+<li><strong>Chưa đề cập rủi ro kỹ thuật số</strong>: WiFi công cộng tại khách sạn/quán cà phê là điểm tấn công phổ biến để đánh cắp thông tin thẻ tín dụng — một lỗ hổng lớn không được nhắc đến trong bài.</li>
+</ul>
+<h3 id="-giải-thích-thuật-ngữ">📖 Giải thích thuật ngữ<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-giải-thích-thuật-ngữ" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Bảo hiểm du lịch quốc tế</strong>: Gói bảo hiểm mua trước chuyến đi, bồi thường cho hủy chuyến, mất hành lý, chi phí y tế ở nước ngoài. Khác với bảo hiểm sức khỏe thông thường (thường chỉ áp dụng trong nước).</li>
+<li><strong>Dorm (phòng tập thể)</strong>: Loại phòng ở hostel với nhiều giường ngủ, giá rẻ, thường dùng cho khách du lịch bụi. Tiện nghi ít nhưng cộng đồng cao.</li>
+<li><strong>Lãnh sự quán</strong>: Văn phòng đại diện của nước bạn ở nước ngoài (nhỏ hơn đại sứ quán), có thể giúp làm lại hộ chiếu khẩn cấp khi bị mất cắp.</li>
+<li><strong>Chợ đen đổi tiền</strong>: Dịch vụ đổi ngoại tệ không chính thức, thường cho tỷ giá hấp dẫn hơn nhưng dễ bị trả tiền thiếu hoặc tiền giả.</li>
+</ul></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Biểu Đồ</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-13" aria-expanded="true"><h3>Bảng Nội Dung</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-1" class="toc-content overflow"><li class="depth-0"><a href="#-phân-tích-bài-viết" data-for="-phân-tích-bài-viết">🔍 Phân tích bài viết</a></li><li class="depth-1"><a href="#-tóm-tắt-ý-chính" data-for="-tóm-tắt-ý-chính">📌 Tóm tắt ý chính</a></li><li class="depth-1"><a href="#-insight--góc-nhìn-đa-chiều" data-for="-insight--góc-nhìn-đa-chiều">💡 Insight &amp; Góc nhìn đa chiều</a></li><li class="depth-1"><a href="#-liên-hệ-việt-nam--cá-nhân" data-for="-liên-hệ-việt-nam--cá-nhân">🇻🇳 Liên hệ Việt Nam &amp; cá nhân</a></li><li class="depth-1"><a href="#️-phản-biện" data-for="️-phản-biện">⚖️ Phản biện</a></li><li class="depth-1"><a href="#-giải-thích-thuật-ngữ" data-for="-giải-thích-thuật-ngữ">📖 Giải thích thuật ngữ</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>© 2026 Tạo và Như Ý</p><ul></ul></footer></div></div></body><script type="application/javascript">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

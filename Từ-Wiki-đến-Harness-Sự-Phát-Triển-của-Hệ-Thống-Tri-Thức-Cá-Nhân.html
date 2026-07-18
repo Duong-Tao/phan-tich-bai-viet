@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="vi" dir="ltr"><head><title>Từ Wiki đến Harness: Sự Phát Triển của Hệ Thống Tri Thức Cá Nhân</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Tạo và Như Ý cần đọc"/><meta property="og:title" content="Từ Wiki đến Harness: Sự Phát Triển của Hệ Thống Tri Thức Cá Nhân"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Từ Wiki đến Harness: Sự Phát Triển của Hệ Thống Tri Thức Cá Nhân"/><meta name="twitter:description" content="Từ Wiki đến Harness: Sự Phát Triển của Hệ Thống Tri Thức Cá Nhân"/><meta property="og:description" content="Từ Wiki đến Harness: Sự Phát Triển của Hệ Thống Tri Thức Cá Nhân"/><meta property="og:image:alt" content="Từ Wiki đến Harness: Sự Phát Triển của Hệ Thống Tri Thức Cá Nhân"/><meta property="og:image" content="https://duong-tao.github.io/phan-tich-bai-viet/static/og-image.png"/><meta property="og:image:url" content="https://duong-tao.github.io/phan-tich-bai-viet/static/og-image.png"/><meta name="twitter:image" content="https://duong-tao.github.io/phan-tich-bai-viet/static/og-image.png"/><meta property="og:image:type" content="image/.png"/><meta property="twitter:domain" content="duong-tao.github.io/phan-tich-bai-viet"/><meta property="og:url" content="https://duong-tao.github.io/phan-tich-bai-viet/Từ-Wiki-đến-Harness-Sự-Phát-Triển-của-Hệ-Thống-Tri-Thức-Cá-Nhân"/><meta property="twitter:url" content="https://duong-tao.github.io/phan-tich-bai-viet/Từ-Wiki-đến-Harness-Sự-Phát-Triển-của-Hệ-Thống-Tri-Thức-Cá-Nhân"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="Từ Wiki đến Harness: Sự Phát Triển của Hệ Thống Tri Thức Cá Nhân"/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiRzpcXFRPT0xTXFxxdWFydHpcXHF1YXJ0elxcY29tcG9uZW50c1xcc3R5bGVzIiwic291cmNlcyI6WyJtZXJtYWlkLmlubGluZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFHRjtFQUNFOzs7QUFLRjtFQUNFO0VBQ0E7OztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFOztBQUlGO0VBQ0U7RUFDQTtFQUNBIiwic291cmNlc0NvbnRlbnQiOlsiLmV4cGFuZC1idXR0b24ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsb2F0OiByaWdodDtcbiAgcGFkZGluZzogMC40cmVtO1xuICBtYXJnaW46IDAuM3JlbTtcbiAgcmlnaHQ6IDA7IC8vIE5PVEU6IHJpZ2h0IHdpbGwgYmUgc2V0IGluIG1lcm1haWQuaW5saW5lLnRzXG4gIGNvbG9yOiB2YXIoLS1ncmF5KTtcbiAgYm9yZGVyLWNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICBib3JkZXI6IDFweCBzb2xpZDtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBvcGFjaXR5OiAwO1xuICB0cmFuc2l0aW9uOiAwLjJzO1xuXG4gICYgPiBzdmcge1xuICAgIGZpbGw6IHZhcigtLWxpZ2h0KTtcbiAgICBmaWx0ZXI6IGNvbnRyYXN0KDAuMyk7XG4gIH1cblxuICAmOmhvdmVyIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgYm9yZGVyLWNvbG9yOiB2YXIoLS1zZWNvbmRhcnkpO1xuICB9XG5cbiAgJjpmb2N1cyB7XG4gICAgb3V0bGluZTogMDtcbiAgfVxufVxuXG5wcmUge1xuICAmOmhvdmVyID4gLmV4cGFuZC1idXR0b24ge1xuICAgIG9wYWNpdHk6IDE7XG4gICAgdHJhbnNpdGlvbjogMC4ycztcbiAgfVxufVxuXG4jbWVybWFpZC1jb250YWluZXIge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIGNvbnRhaW46IGxheW91dDtcbiAgei1pbmRleDogOTk5O1xuICBsZWZ0OiAwO1xuICB0b3A6IDA7XG4gIHdpZHRoOiAxMDB2dztcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgZGlzcGxheTogbm9uZTtcbiAgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDRweCk7XG4gIGJhY2tncm91bmQ6IHJnYmEoMCwgMCwgMCwgMC41KTtcblxuICAmLmFjdGl2ZSB7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB9XG5cbiAgJiA+ICNtZXJtYWlkLXNwYWNlIHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHRvcDogNTAlO1xuICAgIGxlZnQ6IDUwJTtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbiAgICBoZWlnaHQ6IDgwdmg7XG4gICAgd2lkdGg6IDgwdnc7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcblxuICAgICYgPiAubWVybWFpZC1jb250ZW50IHtcbiAgICAgIHBhZGRpbmc6IDJyZW07XG4gICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICB0cmFuc2Zvcm0tb3JpZ2luOiAwIDA7XG4gICAgICB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMC4xcyBlYXNlO1xuICAgICAgb3ZlcmZsb3c6IHZpc2libGU7XG4gICAgICBtaW4taGVpZ2h0OiAyMDBweDtcbiAgICAgIG1pbi13aWR0aDogMjAwcHg7XG5cbiAgICAgIHByZSB7XG4gICAgICAgIG1hcmdpbjogMDtcbiAgICAgICAgYm9yZGVyOiBub25lO1xuICAgICAgfVxuXG4gICAgICBzdmcge1xuICAgICAgICBtYXgtd2lkdGg6IG5vbmU7XG4gICAgICAgIGhlaWdodDogYXV0bztcbiAgICAgIH1cbiAgICB9XG5cbiAgICAmID4gLm1lcm1haWQtY29udHJvbHMge1xuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgYm90dG9tOiAyMHB4O1xuICAgICAgcmlnaHQ6IDIwcHg7XG4gICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgZ2FwOiA4cHg7XG4gICAgICBwYWRkaW5nOiA4cHg7XG4gICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgYm9yZGVyLXJhZGl1czogNnB4O1xuICAgICAgYm94LXNoYWRvdzogMCAycHggNHB4IHJnYmEoMCwgMCwgMCwgMC4xKTtcbiAgICAgIHotaW5kZXg6IDI7XG5cbiAgICAgIC5tZXJtYWlkLWNvbnRyb2wtYnV0dG9uIHtcbiAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgIHdpZHRoOiAzMnB4O1xuICAgICAgICBoZWlnaHQ6IDMycHg7XG4gICAgICAgIHBhZGRpbmc6IDA7XG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgICAgY29sb3I6IHZhcigtLWRhcmspO1xuICAgICAgICBib3JkZXItcmFkaXVzOiA0cHg7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgZm9udC1zaXplOiAxNnB4O1xuICAgICAgICBmb250LWZhbWlseTogdmFyKC0tYm9keUZvbnQpO1xuICAgICAgICB0cmFuc2l0aW9uOiBhbGwgMC4ycyBlYXNlO1xuXG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIH1cblxuICAgICAgICAmOmFjdGl2ZSB7XG4gICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDFweCk7XG4gICAgICAgIH1cblxuICAgICAgICAvLyBTdHlsZSB0aGUgcmVzZXQgYnV0dG9uIGRpZmZlcmVudGx5XG4gICAgICAgICY6bnRoLWNoaWxkKDIpIHtcbiAgICAgICAgICB3aWR0aDogYXV0bztcbiAgICAgICAgICBwYWRkaW5nOiAwIDEycHg7XG4gICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG4iXX0= */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://duong-tao.github.io/phan-tich-bai-viet/index.xml"/></head><body data-slug="Từ-Wiki-đến-Harness-Sự-Phát-Triển-của-Hệ-Thống-Tri-Thức-Cá-Nhân"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">Tạo và Như Ý cần đọc</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Tìm Kiếm</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Tìm kiếm thông tin" placeholder="Tìm kiếm thông tin"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Tối"><title>Tối</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Sáng"><title>Sáng</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Chế độ đọc"><title>Chế độ đọc</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="false" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-88"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Danh mục bài viết</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-88" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Từ Wiki đến Harness: Sự Phát Triển của Hệ Thống Tri Thức Cá Nhân</a></div></nav><h1 class="article-title">Từ Wiki đến Harness: Sự Phát Triển của Hệ Thống Tri Thức Cá Nhân</h1><p show-comma="true" class="content-meta"><time datetime="2026-05-13T17:00:00.000Z">14 thg 5, 2026</time><span>đọc 21 phút</span></p><ul class="tags"><li><a href="./tags/clippings" class="internal tag-link">clippings</a></li><li><a href="./tags/analyzed" class="internal tag-link">analyzed</a></li></ul><div class="text-size" role="group" aria-label="Chọn cỡ chữ"><button data-size="small" title="Chữ nhỏ" aria-label="Chữ nhỏ"><span class="a-small">A</span><span class="lbl">Nhỏ</span></button><button data-size="medium" title="Chữ vừa" aria-label="Chữ vừa"><span class="a-medium">A</span><span class="lbl">Vừa</span></button><button data-size="large" title="Chữ lớn" aria-label="Chữ lớn"><span class="a-large">A</span><span class="lbl">Lớn</span></button></div></div></div><article class="popover-hint"><p><img src="./Từ-Wiki-đến-Harness-Sự-Phát-Triển-của-Hệ-Thống-Tri-Thức-Cá-Nhân.png" width="auto" height="auto" alt/></p>
+<p>Mình thấy nhiều người chia sẻ quy trình làm việc với Obsidian của họ, để mình chia sẻ một chút về quy trình của mình. Mình không bán gì cả, nên không cần lo lắng. Bản gốc được viết bằng tiếng Anh vì tiếng Việt của mình chưa đủ tốt để viết một đoạn dài như thế này.</p>
+<p>Bản tiếng Anh gốc ở bên dưới.</p>
+<p>Từ Wiki đến Harness: Sự Phát Triển của Hệ Thống Tri Thức Cá Nhân</p>
+<p>Khởi Đầu: Gamedev Wiki (Bằng Chứng Khái Niệm)</p>
+<p>Mình bắt đầu với wiki-gamedev, xây dựng một vault có cấu trúc để thu thập kiến thức phát triển game. Vault này không chỉ là tập hợp các ghi chú—nó được tổ chức xung quanh các nguyên tắc thiết kế và thể loại game, với một quy trình rõ ràng: Bài Viết/Video Thô → Chuẩn Hóa → Đề Xuất Cập Nhật Khái Niệm → Áp Dụng Thay Đổi → Biên Soạn Bibles Theo Thể Loại.</p>
+<p>Đây là bằng chứng khái niệm cho thấy mình có thể tự động hóa việc tổng hợp kiến thức. Thay vì tự tay viết “The Complete SHMUP Design Bible”, hệ thống sẽ:</p>
+<ul>
+<li>
+<p>Tiếp nhận hàng chục bài viết và video về shoot-em-ups.</p>
+</li>
+<li>
+<p>Đề xuất những khái niệm nguyên tắc thiết kế nào (Difficulty Curves, Enemy Patterns, Scoring Systems, v.v.) cần được cập nhật.</p>
+</li>
+<li>
+<p>Cho mình xem xét và phê duyệt các thay đổi.</p>
+</li>
+<li>
+<p>Tự động biên soạn lại các topic bibles theo thể loại từ các khái niệm đã cập nhật.</p>
+</li>
+</ul>
+<p>Kết quả: Các bibles sống động luôn được cập nhật khi có nghiên cứu mới, thay vì các tài liệu tĩnh bị lỗi thời trong vài tuần. Mình đã phải xây dựng lại vault 3 lần để đạt được giai đoạn này.</p>
+<p>Mở Rộng: AI và Parenting Wikis</p>
+<p>Thấy được sức mạnh của mô hình này, mình đã nhân rộng template:</p>
+<ul>
+<li>
+<p>wiki-ai: Thu thập nghiên cứu của mình về hệ thống LLM, prompt engineering, và các mẫu AI. Điều này trực tiếp đóng góp vào harness engineering của mình—các nguyên tắc nền tảng cho cách mình điều phối công việc tri thức.</p>
+</li>
+<li>
+<p>wiki-parenting: Mở rộng khái niệm hơn nữa, với định tuyến theo nhóm tuổi. Một tuyên bố về “sleep training cho trẻ mới biết đi” sẽ được định tuyến đến cả trang chủ đề và khối nhóm tuổi, với tự động biên soạn lại các file master theo nhóm tuổi (Hướng Dẫn Trẻ Sơ Sinh, Hướng Dẫn Trẻ Mới Biết Đi, v.v.).</p>
+</li>
+</ul>
+<p>Mỗi vault tuân theo cùng một mẫu, nhưng với các sắc thái riêng theo lĩnh vực:</p>
+<ul>
+<li>
+<p>gamedev: Hàng đợi xem xét tương tác (95% tự động, chỉ một số định tuyến chi tiết cho các trang cụ thể theo thể loại).</p>
+</li>
+<li>
+<p>ai: Hoàn toàn tự động (mình tin tưởng LLM duy trì độ chính xác).</p>
+</li>
+<li>
+<p>parenting: Định tuyến theo nhóm tuổi (thêm một chiều kích ngoài các trang khái niệm).</p>
+</li>
+</ul>
+<p>The Harness: Kết Nối Tất Cả Lại</p>
+<p>Khi đã có ba wikis mạnh mẽ hoạt động độc lập, bước tiếp theo là hiển nhiên: mình xây dựng một orchestrator thống nhất. Vì vậy, tôi tự chế tạo bộ dây đeo của riêng mình., chạy trên Mac Studio headless của mình.</p>
+<p>Harness tiếp nhận nội dung từ Telegram và Discord, định tuyến đến đúng vault, tổng hợp các tuyên bố thành khái niệm, áp dụng chúng, tái tạo tất cả topic bibles, và thậm chí tạo nội dung có thể chia sẻ từ chúng—hoàn toàn tự động, mỗi chu kỳ.</p>
+<p>Quy Trình Chính:</p>
+<ul>
+<li>
+<p>Giao Diện Bot: Mình đăng link lên Telegram hoặc Discord. Bot được huấn luyện để nhận diện: /ai <url>, /game <url>, /parenting <url>.</url></url></url></p>
+</li>
+<li>
+<p>Scraping: Nội dung chảy qua Jina Reader (bài viết web) và YouTube Transcript API (video).</p>
+</li>
+<li>
+<p>Lớp Intelligence: Các prompt dạng Markdown nằm trong mỗi vault. LLM đọc nội dung đã tiếp nhận và các khái niệm hiện có, đề xuất cập nhật dưới dạng JSON.</p>
+</li>
+<li>
+<p>Giai Đoạn Áp Dụng:</p>
+</li>
+<li>
+<p>Với gamedev: Hàng đợi xem xét của mình giữ các đề xuất. Mình phê duyệt/từ chối qua telegram/discord. Chỉ các thay đổi được phê duyệt mới được ghi vào vault.</p>
+</li>
+<li>
+<p>Với ai &amp; parenting: Các thay đổi được ghi trực tiếp.</p>
+</li>
+<li>
+<p>Tái Biên Soạn: Vào cuối mỗi chu kỳ, tất cả topic bibles được tái tạo—Genre bibles, AI topic bibles, hướng dẫn parenting theo nhóm tuổi. Mọi thứ đều đồng bộ.</p>
+</li>
+</ul>
+<p>Vòng Phản Hồi Tạo Nội Dung:</p>
+<p>Mình giờ có thể tạo nội dung chỉnh chu từ các topic bibles của mình—kịch bản cho YouTube, tóm tắt cho Spotify, hoặc các bài viết độc lập. Thay vì xuất bản chúng như đầu ra công khai, mình đã kết nối chúng trở lại vào wikis của mình. Điều này tạo ra một vòng lặp có lợi: nội dung mới trở thành nguyên liệu thô, được chuẩn hóa và tích hợp vào các khái niệm, làm phong phú thêm các bibles. Hệ thống tri thức của mình tự nhân lên.</p>
+<p>Bảo Trì Hàng Đêm:</p>
+<p>Mỗi đêm, khi mình ngủ, harness chạy một lượt dọn dẹp trên các vault:</p>
+<ul>
+<li>
+<p>Linting: Sửa các vấn đề định dạng, link lỗi, và các vấn đề cấu trúc.</p>
+</li>
+<li>
+<p>Deduplication: Nhận diện và gộp các trang khái niệm trùng lặp.</p>
+</li>
+<li>
+<p>Concept Merging: Phát hiện các khái niệm liên quan và đề xuất hợp nhất.</p>
+</li>
+<li>
+<p>Fresh Proposals: Tạo các đề xuất gộp khái niệm mới cho chu kỳ tiếp theo.</p>
+</li>
+</ul>
+<p>Điều này giữ cho hệ thống tri thức của mình sạch sẽ và mạch lạc. Thay vì bị hư hỏng (link chết, trùng lặp, mảnh vỡ rải rác), các vault của mình ngày càng khỏe mạnh theo thời gian.</p>
+<p>Hiệu Ứng Bậc Hai: Mobile Game</p>
+<p>Khi gamedev wiki đã đủ trưởng thành, mình khởi động một dự án mobile game. Thay vì tham khảo tài liệu thiết kế thủ công, code game trực tiếp tham chiếu đến SHMUP topic bible từ gamedev vault của mình.</p>
+<p>Khi bible phát triển (bài viết mới đến, khái niệm được tinh chỉnh, best practices rõ ràng hơn), game tự động được hưởng lợi. Trí thông minh thiết kế chảy từ hệ thống tri thức vào công việc sáng tạo của mình.</p>
+<p>Nơi Mình Đang Đứng Bây Giờ</p>
+<p>Hệ thống của mình hoàn toàn tự động. Mỗi tuần:</p>
+<ul>
+<li>
+<p>Mình tìm các bài viết và video hữu ích.</p>
+</li>
+<li>
+<p>Mình chỉ thả link vào Telegram/Discord những gì mình sẽ hưởng lợi và muốn đọc lại.</p>
+</li>
+<li>
+<p>Harness tiếp nhận, tổng hợp, và cập nhật cả ba hệ thống tri thức.</p>
+</li>
+<li>
+<p>Topic bibles được tái tạo với suy nghĩ mới nhất.</p>
+</li>
+<li>
+<p>Nội dung được tạo ra phản hồi lại vào wikis (nếu mình tạo).</p>
+</li>
+<li>
+<p>Mobile game của mình tự động nhận được hướng dẫn thiết kế tốt hơn.</p>
+</li>
+<li>
+<p>Mỗi đêm, hệ thống tự dọn dẹp—deduping, linting, merging concepts.</p>
+</li>
+</ul>
+<p>Vậy là hết phần giới thiệu về wiki LLM tự động và cách tôi sử dụng nó để bổ sung kiến ​​thức cho bản thân bằng cách đọc lại, xem video hoặc nghe các bản ghi âm từ Notebook LM, và cách tôi sử dụng nó để hỗ trợ các quy trình làm việc khác như xây dựng khung sườn cho LLM cục bộ của tôi, hoặc thử nghiệm làm game.</p>
+<p>Tôi đã cố gắng dịch nó, nhưng tôi nghĩ là mình đã làm hỏng định dạng một chút, và Facebook không cho phép tôi đăng bài viết có hơn 100 dòng ngắt. <img src="https://static.xx.fbcdn.net/images/emoji.php/v9/t53/1/16/1f605.png" alt="😅"/></p>
+<p>Luồng hoạt động (The Flow)</p>
+<p>Nội dung xuất hiện khi có người đăng URL vào Discord (bot đang theo dõi kênh). Bot nhận URL và xác định đây là nội dung cho AI wiki hay game dev wiki (định tuyến vault). Sau đó, URL được đưa vào hàng đợi, gắn mức độ ưu tiên (nhẹ / trung bình / nặng), và hệ thống gán mô hình AI phù hợp dựa trên độ phức tạp. Web scraper sẽ lấy nội dung bài viết từ web, rồi nội dung đi qua 4 giai đoạn xử lý: normalize → enrich → propose → apply. Nếu cần, bản đề xuất được gửi cho con người review trước khi commit vào wiki. Khi được duyệt, hệ thống ghi nội dung cuối cùng xuống disk. Toàn bộ hệ thống vận hành bất đồng bộ: mọi thứ chạy nền, các worker thông báo cho nhau khi có thay đổi và “conductor” điều phối ai làm gì.</p>
+<p>Conductor (run.py)</p>
+<p>Conductor là “bộ não khởi động” của hệ thống, giống như quản đốc dây chuyền: bật tất cả worker, giữ chúng hoạt động và đảm bảo chúng có thể giao tiếp với nhau. File này rất đơn giản (khoảng 50 dòng), hầu như không bao giờ phải thay đổi. Nhiệm vụ duy nhất: start worker và stop worker.</p>
+<p>Notifier</p>
+<p>Notifier là hệ thống liên lạc giữa các worker. Khi Worker A cần báo cho Worker B biết điều gì đó, nó gửi message qua Notifier, và Worker B sẽ nhận callback kiểu “sự kiện X vừa xảy ra”. Thành phần này chủ yếu dùng để gửi cập nhật trạng thái, báo lỗi, hoặc kết quả phê duyệt.</p>
+<p>Task Queue</p>
+<p>Task Queue là to-do list trung tâm của hệ thống. Nó có các chức năng chính:</p>
+<p>Thêm task mới (enqueue), ví dụ “xử lý URL này”.</p>
+<p>Phân loại task là nhẹ, trung bình hay nặng.</p>
+<p>Gán model phù hợp cho từng loại task.</p>
+<p>Lấy task tiếp theo để xử lý (dequeue).</p>
+<p>Đánh dấu task hoàn thành hoặc thất bại.</p>
+<p>Lưu / tải trạng thái xuống disk để không mất task khi hệ thống restart.</p>
+<p>Web Scraper</p>
+<p>Web Scraper chịu trách nhiệm lấy nội dung từ URL. Nó dùng API Jina Reader để kéo về markdown sạch. Cụ thể:</p>
+<p>Lấy nội dung bài viết (extract content).</p>
+<p>Lấy tiêu đề (extract title) hoặc suy ra từ URL nếu thiếu.</p>
+<p>Dọn các artifact như link markdown bị lỗi do quá trình convert.</p>
+<p>Pipeline Processor</p>
+<p>Pipeline Processor chạy nội dung qua 4 bước tuần tự như dây chuyền sản xuất: normalize, enrich, propose, apply. Bước normalize chuẩn hóa format và dọn markdown; enrich thêm metadata, reference và liên kết chéo; propose tạo bản nháp thay đổi; apply ghi thay đổi vào file wiki. Mỗi bước là một script riêng chạy dưới dạng subprocess. Pipeline builder thiết lập biến môi trường (vault, model, v.v.) rồi gọi từng script theo thứ tự. Mỗi stage có prompt riêng mà harness gửi cho LLM kèm nội dung.</p>
+<p>Bot Worker (Discord Bot)</p>
+<p>Bot Worker theo dõi kênh Discord 24/7. Khi có message mới, nó kiểm tra prefix (ai: hoặc game:) để định tuyến đến đúng vault. Các lệnh chính: URL sẽ được scrape và đưa vào queue; link YouTube sẽ được transcribe trước; text khác được chuyển tới handler phù hợp. Bot Worker cũng xử lý phản hồi review (approve / reject), và gửi thông báo trạng thái ngược lại lên Discord, ví dụ “ingestion complete!”.</p>
+<p>Queue Worker</p>
+<p>Queue Worker là worker xử lý chính của pipeline ingestion. Nó liên tục lặp: lấy task tiếp theo từ Task Queue, thực thi (thường bằng cách gọi Pipeline Processor), theo dõi quá trình chạy, báo cho Bot Worker khi xong, đánh dấu task là complete hoặc fail rồi chuyển sang task kế tiếp. Đây là “cỗ máy chính” thực sự chạy pipeline cho từng item trong hàng đợi.</p>
+<p>Chat Worker</p>
+<p>Chat Worker là một interface hội thoại nhẹ, chạy model nhỏ và nhanh (qua Ollama) trên máy local. Nó dùng cho các cuộc trao đổi nhanh với người dùng và trả lời các câu hỏi đơn giản về wiki. Những job nặng luôn được chuyển cho Queue Worker thay vì Chat Worker.</p>
+<p>Linting &amp; Analysis Worker</p>
+<p>Linting &amp; Analysis Worker là worker kiểm tra chất lượng chạy theo lịch, thường là ban đêm. Nó đọc toàn bộ các trang wiki và: kiểm tra link hỏng, validate cấu trúc format (heading, v.v.), tìm metadata còn thiếu, tạo báo cáo lỗi ở dạng dễ đọc. Với những vấn đề đơn giản nằm trong block được cho phép, nó có thể tự động sửa.</p>
+<p>Cách các thành phần phối hợp</p>
+<p>Một luồng ingest wiki điển hình: người dùng đăng URL lên Discord, Bot Worker thấy message và parse prefix để xác định vault, sau đó tạo một task mới và thêm vào Task Queue. Queue Worker thức dậy, lấy task đó, yêu cầu Task Queue phân loại, nhận về kết quả như “task nặng” và thông tin model tương ứng. Queue Worker yêu cầu Model Manager load đúng model, rồi gọi Web Scraper để fetch URL. Scraper trả về title và markdown đã dọn sạch. Queue Worker chạy Pipeline Processor qua 4 stage: normalize → enrich → propose → apply, mỗi stage chạy trong subprocess với thông tin vault và model. Pipeline Processor trả về một summary, Queue Worker đưa summary đó vào flow review cho Review Worker / con người. Khi người dùng duyệt trên Discord, Bot Worker thấy approval và báo Queue Worker finalize. Lúc này nội dung được ghi vào wiki, và Notifier gửi cập nhật trạng thái ngược lại lên Discord. Trong suốt quá trình này, Conductor luôn chạy để đảm bảo mọi worker sống và nói chuyện được với nhau, còn Linting Worker chạy riêng vào ban đêm để audit toàn bộ hệ thống.</p>
+<p>--------</p>
+<p>I see many people sharing their Obsidian workflow, let me share a little of mine. I’m not selling anything, so no need to worry.</p>
+<p>From Wiki to Harness: The Evolution of My Knowledge System</p>
+<p>The Beginning: Gamedev Wiki (Proof of Concept)</p>
+<p>I started with wiki-gamedev, building a structured vault to capture my game development knowledge. The vault wasn’t just a collection of notes—it was organized around design disciplines and genres, with a clear pipeline: Raw Article/Video → Normalize → Propose Concept Updates → Apply Changes → Compile Genre Bibles.</p>
+<p>This was my proof of concept that I could automate knowledge synthesis. Rather than manually writing “The Complete SHMUP Design Bible,” the system would:</p>
+<ul>
+<li>
+<p>Ingest dozens of articles and videos about shoot-em-ups.</p>
+</li>
+<li>
+<p>Suggest which design discipline concepts (Difficulty Curves, Enemy Patterns, Scoring Systems, etc.) should be updated.</p>
+</li>
+<li>
+<p>Let me review and approve the changes.</p>
+</li>
+<li>
+<p>Automatically recompile the genre-specific topic bibles from the updated concepts.</p>
+</li>
+</ul>
+<p>The result: Living bibles that stayed current as new research came in, instead of static documents that went stale in weeks. It took me 3 vault rebuilds to get to this stage.</p>
+<p>Expansion: AI and Parenting Wikis</p>
+<p>Seeing the power of this model, I replicated the template:</p>
+<ul>
+<li>
+<p>wiki-ai: Captured my research on LLM systems, prompt engineering, and AI patterns. This fed directly into my harness engineering—the principles that underpin how I orchestrate knowledge work.</p>
+</li>
+<li>
+<p>wiki-parenting: Extended the concept further, with age-group routing. A claim about “sleep training for toddlers” would route to both a topic page and an age-group block, with automatic recompilation of age-grouped master files (Infant Guide, Toddler Guide, etc.).</p>
+</li>
+</ul>
+<p>Each vault followed the same pattern, but with domain-specific nuances:</p>
+<ul>
+<li>
+<p>gamedev: Interactive review queue (95% automated, just some detailed routing for genre specific pages).</p>
+</li>
+<li>
+<p>ai: Fully automated (I trusted the LLM to maintain accuracy).</p>
+</li>
+<li>
+<p>parenting: Age-group routing (added a dimension beyond just concept pages).</p>
+</li>
+</ul>
+<p>The Harness: Tying It All Together</p>
+<p>Once I had three independently powerful wikis, the next step was obvious: I built a unified orchestrator. So I build my own harness, running on my headless Mac Studio.</p>
+<p>The harness ingests content from Telegram and Discord, routes it to the right vault, synthesizes claims into concepts, applies them, regenerates all topic bibles, and even generates shareable content from them—fully automated, every cycle.</p>
+<p>The Main Flow:</p>
+<ul>
+<li>
+<p>Bot Interface: I post links to Telegram or Discord. The bot’s trained to recognize: /ai <url>, /game <url>, /parenting <url>.</url></url></url></p>
+</li>
+<li>
+<p>Scraping: Content flows through Jina Reader (web articles) and YouTube Transcript API (videos).</p>
+</li>
+<li>
+<p>Intelligence Layer: Markdown-driven prompts live in each vault. The LLM reads ingested content and existing concepts, proposes updates as JSON.</p>
+</li>
+<li>
+<p>Apply Stage:</p>
+</li>
+<li>
+<p>For gamedev: My review queue holds proposals. I approve/reject via telegram/discord. Only approved changes write to the vault.</p>
+</li>
+<li>
+<p>For ai &amp; parenting: Changes write directly.</p>
+</li>
+<li>
+<p>Recompilation: At the end of every cycle, all topic bibles regenerate—Genre bibles, AI topic bibles, age-grouped parenting guides. Everything stays in sync.</p>
+</li>
+</ul>
+<p>The Content Generation Feedback Loop:</p>
+<p>I can now generate polished content from my topic bibles—scripts for YouTube, summaries for Spotify, or standalone articles. Rather than publishing this as my public output, I’ve wired it back into my wikis. This creates a virtuous cycle: new content becomes raw material, which gets normalized and incorporated into concepts, which enriches the bibles further. My knowledge system compounds on itself.</p>
+<p>Behind the Scenes: Nightly Maintenance</p>
+<p>Every night, while I sleep, the harness runs a cleanup pass on my vaults:</p>
+<ul>
+<li>
+<p>Linting: Fixes formatting inconsistencies, malformed links, and structural issues.</p>
+</li>
+<li>
+<p>Deduplication: Identifies and merges duplicate concept pages.</p>
+</li>
+<li>
+<p>Concept Merging: Detects related concepts and proposes consolidations.</p>
+</li>
+<li>
+<p>Fresh Proposals: Generates new concept merge proposals for the next cycle.</p>
+</li>
+</ul>
+<p>This keeps my knowledge systems clean and coherent. Instead of rot setting in (dead links, duplicates, scattered fragments), my vaults get healthier with time.</p>
+<p>The Second-Order Effect: Mobile Game</p>
+<p>Once my gamedev wiki was mature enough, I spun up a mobile game project. Rather than manually consulting design documents, the game code directly references the SHMUP topic bible from my gamedev vault.</p>
+<p>As the bible evolves (new articles come in, concepts get refined, best practices clarify), the game automatically benefits. Design intelligence flows from my knowledge system into my creative work.</p>
+<p>Where I Am Now</p>
+<p>My system is fully automated. Every week:</p>
+<ul>
+<li>
+<p>I find useful articles and videos.</p>
+</li>
+<li>
+<p>I only drop links into Telegram/Discord that I would benefit from and want to read again.</p>
+</li>
+<li>
+<p>The harness ingests, synthesizes, and updates all three knowledge systems.</p>
+</li>
+<li>
+<p>Topic bibles regenerate with the latest thinking.</p>
+</li>
+<li>
+<p>Generated content feeds back into the wikis (if I create it).</p>
+</li>
+<li>
+<p>My mobile game gets better design guidance automatically.</p>
+</li>
+<li>
+<p>Every night, the system cleans itself—deduping, linting, merging concepts.</p>
+</li>
+</ul>
+<p>So that is it for the automated LLM wiki and how I use it to feed my own knowledge by rereading it, watching the vidoes, or listening to the output by Notebook LM, and how I use it to feed other workflows like building the harness for my local LLM, or test making a game.</p>
+<p><img src="./Từ-Wiki-đến-Harness-Sự-Phát-Triển-của-Hệ-Thống-Tri-Thức-Cá-Nhân-1.png" width="auto" height="auto" alt/></p>
+<p><img src="./Từ-Wiki-đến-Harness-Sự-Phát-Triển-của-Hệ-Thống-Tri-Thức-Cá-Nhân-2.png" width="auto" height="auto" alt/></p>
+<p><img src="./Từ-Wiki-đến-Harness-Sự-Phát-Triển-của-Hệ-Thống-Tri-Thức-Cá-Nhân-3.png" width="auto" height="auto" alt/></p>
+<p><img src="./Từ-Wiki-đến-Harness-Sự-Phát-Triển-của-Hệ-Thống-Tri-Thức-Cá-Nhân-4.png" width="auto" height="auto" alt/></p>
+<hr/>
+<h2 id="-phân-tích-bài-viết">🔍 Phân tích bài viết<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-phân-tích-bài-viết" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<blockquote class="callout abstract" data-callout="abstract">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>📌 Tóm tắt ý chính </p></div>
+                  
+                </div>
+<div class="callout-content">
+<ul>
+<li>Tác giả xây dựng hệ thống “harness” — một orchestrator tự động hóa toàn bộ quy trình ingest, tổng hợp, và cập nhật kiến thức từ 3 wiki riêng biệt (gamedev, AI, parenting).</li>
+<li>Kiến trúc gồm nhiều worker chuyên biệt (Bot, Queue, Linting, Chat, Notifier) phối hợp bất đồng bộ, điều phối bởi một Conductor đơn giản ~50 dòng.</li>
+<li>Pipeline 4 bước (normalize → enrich → propose → apply) cho phép LLM đề xuất cập nhật khái niệm, con người chỉ cần review phần cần thiết.</li>
+<li>Vòng lặp tự tăng trưởng: nội dung mới → wiki → topic bibles → content generation → feed ngược lại → wiki ngày càng giàu hơn.</li>
+<li>Second-order effect: mobile game tự động hưởng lợi khi SHMUP bible trong wiki-gamedev được cập nhật — kiến thức chảy trực tiếp vào sản phẩm.</li>
+</ul>
+</div>
+</blockquote>
+<h3 id="️-mindmap">🗺️ Mindmap<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#️-mindmap" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure class="canvas-mindmap"><div class="cv-toolbar"><button type="button" class="cv-btn cv-zoom-out" title="Thu nhỏ" aria-label="Thu nhỏ">−</button><button type="button" class="cv-btn cv-reset" title="Về vị trí gốc" aria-label="Về vị trí gốc">⟲</button><button type="button" class="cv-btn cv-zoom-in" title="Phóng to" aria-label="Phóng to">+</button><button type="button" class="cv-btn cv-fullscreen-toggle" title="Toàn màn hình" aria-label="Toàn màn hình">⛶</button></div><div class="cv-canvas-wrap"><svg viewBox="-908 -508 1816 1716" xmlns="http://www.w3.org/2000/svg" width="100%" style="height:auto;display:block;touch-action:none;"><defs><marker id="cv-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7d8896"></path></marker></defs><g class="cv-zoom-layer"><path d="M 620 -340 C 620 -330, 620 -330, 620 -320" fill="none" stroke="#7d8896" stroke-width="2.5" marker-end="url(#cv-arrow)" opacity="0.65"></path><path d="M 620 -200 C 620 -190, 620 -190, 620 -180" fill="none" stroke="#7d8896" stroke-width="2.5" marker-end="url(#cv-arrow)" opacity="0.65"></path><path d="M 620 -40 C 620 -30, 620 -30, 620 -20" fill="none" stroke="#7d8896" stroke-width="2.5" marker-end="url(#cv-arrow)" opacity="0.65"></path><path d="M 620 320 C 620 330, 620 330, 620 340" fill="none" stroke="#7d8896" stroke-width="2.5" marker-end="url(#cv-arrow)" opacity="0.65"></path><path d="M 620 460 C 620 470, 620 470, 620 480" fill="none" stroke="#7d8896" stroke-width="2.5" marker-end="url(#cv-arrow)" opacity="0.65"></path><path d="M 620 320 C 620 480, 620 480, 620 640" fill="none" stroke="#7d8896" stroke-width="2.5" marker-end="url(#cv-arrow)" opacity="0.65"></path><path d="M 380 40 C 380 -130, -380 -130, -380 -300" fill="none" stroke="#7d8896" stroke-width="2.5" marker-end="url(#cv-arrow)" opacity="0.65"></path><g><rect x="-200" y="-100" width="400" height="200" rx="14" fill="#161b22" stroke="#6fbf73" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="0" y="-30" font-size="18" font-weight="700" fill="#6fbf73">🧠 Harness</tspan><tspan x="0" y="-3" font-size="15" font-weight="400" fill="#e6edf3">**Hệ thống tri thức tự động**</tspan><tspan x="0" y="18" font-size="15" font-weight="400" fill="#e6edf3">Orchestrator thống nhất</tspan><tspan x="0" y="39" font-size="15" font-weight="400" fill="#e6edf3">chạy trên Mac Studio headless</tspan></text></g><g><rect x="-860" y="-360" width="480" height="120" rx="14" fill="#161b22" stroke="#4aa3c4" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="-620" y="-319.5" font-size="18" font-weight="700" fill="#4aa3c4">🎮 wiki-gamedev</tspan><tspan x="-620" y="-292.5" font-size="15" font-weight="400" fill="#e6edf3">Review thủ công 5%</tspan><tspan x="-620" y="-271.5" font-size="15" font-weight="400" fill="#e6edf3">Genre Bibles, SHMUP design</tspan></text></g><g><rect x="-860" y="-220" width="480" height="120" rx="14" fill="#161b22" stroke="#4aa3c4" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="-620" y="-179.5" font-size="18" font-weight="700" fill="#4aa3c4">🤖 wiki-ai</tspan><tspan x="-620" y="-152.5" font-size="15" font-weight="400" fill="#e6edf3">Hoàn toàn tự động</tspan><tspan x="-620" y="-131.5" font-size="15" font-weight="400" fill="#e6edf3">LLM systems, prompt engineering</tspan></text></g><g><rect x="-860" y="-80" width="480" height="120" rx="14" fill="#161b22" stroke="#4aa3c4" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="-620" y="-39.5" font-size="18" font-weight="700" fill="#4aa3c4">👶 wiki-parenting</tspan><tspan x="-620" y="-12.5" font-size="15" font-weight="400" fill="#e6edf3">Định tuyến theo nhóm tuổi</tspan><tspan x="-620" y="8.5" font-size="15" font-weight="400" fill="#e6edf3">Infant / Toddler Guides</tspan></text></g><g><rect x="380" y="-460" width="480" height="120" rx="14" fill="#161b22" stroke="#e0954a" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="620" y="-419.5" font-size="18" font-weight="700" fill="#e0954a">🤖 Bot Interface</tspan><tspan x="620" y="-392.5" font-size="15" font-weight="400" fill="#e6edf3">Telegram / Discord</tspan><tspan x="620" y="-371.5" font-size="15" font-weight="400" fill="#e6edf3">`/ai`, `/game`, `/parenting` &lt;url></tspan></text></g><g><rect x="380" y="-320" width="480" height="120" rx="14" fill="#161b22" stroke="#e0954a" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="620" y="-279.5" font-size="18" font-weight="700" fill="#e0954a">🕸️ Web Scraper</tspan><tspan x="620" y="-252.5" font-size="15" font-weight="400" fill="#e6edf3">Jina Reader (articles)</tspan><tspan x="620" y="-231.5" font-size="15" font-weight="400" fill="#e6edf3">YouTube Transcript API</tspan></text></g><g><rect x="380" y="-180" width="480" height="140" rx="14" fill="#161b22" stroke="#e0954a" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="620" y="-140" font-size="18" font-weight="700" fill="#e0954a">⚙️ Pipeline 4 bước</tspan><tspan x="620" y="-113" font-size="15" font-weight="400" fill="#e6edf3">normalize → enrich</tspan><tspan x="620" y="-92" font-size="15" font-weight="400" fill="#e6edf3">→ propose → apply</tspan><tspan x="620" y="-71" font-size="15" font-weight="400" fill="#e6edf3">Mỗi bước chạy subprocess riêng</tspan></text></g><g><rect x="380" y="-20" width="480" height="120" rx="14" fill="#161b22" stroke="#e0954a" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="620" y="20.5" font-size="18" font-weight="700" fill="#e0954a">📋 Review Queue</tspan><tspan x="620" y="47.5" font-size="15" font-weight="400" fill="#e6edf3">Gamedev: duyệt thủ công</tspan><tspan x="620" y="68.5" font-size="15" font-weight="400" fill="#e6edf3">AI &amp; Parenting: ghi thẳng</tspan></text></g><g><rect x="-860" y="460" width="480" height="100" rx="14" fill="#161b22" stroke="#a98edb" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="-620" y="493" font-size="18" font-weight="700" fill="#a98edb">🎼 Conductor (run.py)</tspan><tspan x="-620" y="520" font-size="15" font-weight="400" fill="#e6edf3">Bộ não khởi động ~50 dòng</tspan><tspan x="-620" y="541" font-size="15" font-weight="400" fill="#e6edf3">Start/stop tất cả workers</tspan></text></g><g><rect x="-860" y="580" width="480" height="100" rx="14" fill="#161b22" stroke="#a98edb" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="-620" y="613" font-size="18" font-weight="700" fill="#a98edb">⚡ Queue Worker</tspan><tspan x="-620" y="640" font-size="15" font-weight="400" fill="#e6edf3">Cỗ máy chính chạy pipeline</tspan><tspan x="-620" y="661" font-size="15" font-weight="400" fill="#e6edf3">Dequeue → Execute → Report</tspan></text></g><g><rect x="-860" y="700" width="480" height="100" rx="14" fill="#161b22" stroke="#a98edb" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="-620" y="733" font-size="18" font-weight="700" fill="#a98edb">🤖 Bot Worker</tspan><tspan x="-620" y="760" font-size="15" font-weight="400" fill="#e6edf3">Discord 24/7, parse prefix</tspan><tspan x="-620" y="781" font-size="15" font-weight="400" fill="#e6edf3">Xử lý approve/reject</tspan></text></g><g><rect x="-860" y="820" width="480" height="100" rx="14" fill="#161b22" stroke="#a98edb" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="-620" y="853" font-size="18" font-weight="700" fill="#a98edb">💬 Chat Worker</tspan><tspan x="-620" y="880" font-size="15" font-weight="400" fill="#e6edf3">Model nhỏ qua Ollama</tspan><tspan x="-620" y="901" font-size="15" font-weight="400" fill="#e6edf3">Hỏi nhanh về wiki</tspan></text></g><g><rect x="-860" y="940" width="480" height="100" rx="14" fill="#161b22" stroke="#a98edb" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="-620" y="973" font-size="18" font-weight="700" fill="#a98edb">🔍 Linting Worker</tspan><tspan x="-620" y="1000" font-size="15" font-weight="400" fill="#e6edf3">Chạy ban đêm theo lịch</tspan><tspan x="-620" y="1021" font-size="15" font-weight="400" fill="#e6edf3">Dedup, lint, validate</tspan></text></g><g><rect x="-860" y="1060" width="480" height="100" rx="14" fill="#161b22" stroke="#a98edb" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="-620" y="1093" font-size="18" font-weight="700" fill="#a98edb">📡 Notifier</tspan><tspan x="-620" y="1120" font-size="15" font-weight="400" fill="#e6edf3">Giao tiếp giữa workers</tspan><tspan x="-620" y="1141" font-size="15" font-weight="400" fill="#e6edf3">Event-driven callbacks</tspan></text></g><g><rect x="380" y="200" width="480" height="120" rx="14" fill="#161b22" stroke="#d9bb3f" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="620" y="240.5" font-size="18" font-weight="700" fill="#d9bb3f">📖 Topic Bibles</tspan><tspan x="620" y="267.5" font-size="15" font-weight="400" fill="#e6edf3">Tái tạo mỗi chu kỳ</tspan><tspan x="620" y="288.5" font-size="15" font-weight="400" fill="#e6edf3">SHMUP, AI, Age-group Guides</tspan></text></g><g><rect x="380" y="340" width="480" height="120" rx="14" fill="#161b22" stroke="#d9bb3f" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="620" y="380.5" font-size="18" font-weight="700" fill="#d9bb3f">✍️ Content Generation</tspan><tspan x="620" y="407.5" font-size="15" font-weight="400" fill="#e6edf3">YouTube scripts, Spotify summaries</tspan><tspan x="620" y="428.5" font-size="15" font-weight="400" fill="#e6edf3">Feed ngược lại vào wikis</tspan></text></g><g><rect x="380" y="480" width="480" height="140" rx="14" fill="#161b22" stroke="#d9bb3f" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="620" y="520" font-size="18" font-weight="700" fill="#d9bb3f">🌙 Nightly Maintenance</tspan><tspan x="620" y="547" font-size="15" font-weight="400" fill="#e6edf3">Deduplication + Linting</tspan><tspan x="620" y="568" font-size="15" font-weight="400" fill="#e6edf3">Concept Merging + Fresh Proposals</tspan><tspan x="620" y="589" font-size="15" font-weight="400" fill="#e6edf3">Vault ngày càng khỏe hơn</tspan></text></g><g><rect x="380" y="640" width="480" height="140" rx="14" fill="#161b22" stroke="#d9bb3f" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="620" y="680" font-size="18" font-weight="700" fill="#d9bb3f">🎮 Mobile Game</tspan><tspan x="620" y="707" font-size="15" font-weight="400" fill="#e6edf3">(Second-order effect)</tspan><tspan x="620" y="728" font-size="15" font-weight="400" fill="#e6edf3">Code tham chiếu SHMUP Bible</tspan><tspan x="620" y="749" font-size="15" font-weight="400" fill="#e6edf3">Tự động hưởng lợi khi bible cập nhật</tspan></text></g></g></svg></div></figure>
+<blockquote class="callout tip" data-callout="tip">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>💡 Insight &amp; Góc nhìn đa chiều </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p><strong>Xu hướng:</strong> Hệ thống tri thức cá nhân đang chuyển từ “lưu trữ thụ động” sang “compound knowledge machine” — không chỉ ghi chép mà tự động tổng hợp, làm sạch, và tái cấu trúc kiến thức liên tục. Đây là điểm khác biệt căn bản so với Zettelkasten hay PKM truyền thống.</p>
+<p><strong>Ai được lợi:</strong> Người có khả năng engineering để xây dựng harness như vậy — tác giả tự thừa nhận phải rebuild vault 3 lần. Barrier to entry cao, nhưng lợi thế cạnh tranh với người không làm được cũng rất lớn.</p>
+<p><strong>Điều ẩn:</strong> Hệ thống này thực chất là một “second brain với vòng phản hồi” — điểm đột phá không phải là lưu trữ tốt hơn, mà là kiến thức tự <strong>compound</strong> như lãi kép. Mỗi bài mới không chỉ thêm vào kho mà còn làm phong phú mọi thứ đã có. Đây là nguyên lý mà hầu hết người dùng Obsidian bỏ lỡ.</p>
+<p><strong>Ẩn số kỹ thuật:</strong> Tác giả không đề cập cost LLM hàng tháng và độ chính xác thực tế của pipeline — hai yếu tố quyết định tính bền vững dài hạn.</p>
+</div>
+</blockquote>
+<blockquote class="callout warning" data-callout="warning">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>⚖️ Phản biện </p></div>
+                  
+                </div>
+<div class="callout-content">
+<ul>
+<li><strong>Chi phí ẩn rất cao:</strong> Chạy LLM cho mọi URL ingest, tái biên soạn toàn bộ bibles mỗi chu kỳ, nightly maintenance — cost token có thể leo thang nhanh. Tác giả không nêu con số, dễ gây ảo tưởng rằng đây là giải pháp scalable cho mọi người.</li>
+<li><strong>“Fully automated” nhưng phụ thuộc con người ở bước cuối:</strong> Với gamedev (lĩnh vực quan trọng nhất), vẫn cần approve thủ công. Nếu tác giả bận vài ngày, queue sẽ tồn đọng. Hệ thống không tự vận hành hoàn toàn như tiêu đề ngụ ý.</li>
+<li><strong>Chất lượng phụ thuộc chất lượng input:</strong> Nếu tác giả chỉ thả link chứ không đọc kỹ, LLM có thể ingest thông tin sai hoặc thiên lệch vào wiki — và một khi khái niệm sai đã được apply, nó sẽ lan sang topic bibles. Linting worker không thể phát hiện “logical error” trong nội dung.</li>
+<li><strong>Rủi ro monoculture kiến thức:</strong> Mọi thứ đều qua cùng một LLM với cùng prompt → risk thu hẹp góc nhìn thay vì mở rộng. Wiki có thể phản ánh bias của model hơn là thực tế đa chiều.</li>
+</ul>
+</div>
+</blockquote>
+<blockquote class="callout question" data-callout="question">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>❓ Câu hỏi mở </p></div>
+                  
+                </div>
+<div class="callout-content">
+<ol>
+<li>Khi hai bài viết contradicts nhau về cùng một khái niệm (ví dụ: hai nghiên cứu trái chiều về sleep training), harness xử lý conflict như thế nào — ghi đè, gộp, hay giữ cả hai với annotation?</li>
+<li>Chi phí LLM thực tế hàng tháng cho hệ thống này là bao nhiêu, và tại ngưỡng nào thì nó không còn hiệu quả kinh tế so với đọc và ghi chú thủ công?</li>
+<li>Liệu topic bibles được tái biên soạn tự động có đủ chất lượng để thay thế tư duy tổng hợp của con người, hay chúng chỉ là “tóm tắt tốt hơn” mà thiếu đi những kết nối sáng tạo đột phá?</li>
+</ol>
+</div>
+</blockquote>
+<blockquote class="callout note" data-callout="note">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>🇻🇳 Liên hệ Việt Nam </p></div>
+                  
+                </div>
+<div class="callout-content">
+<ul>
+<li><strong>Thị trường lao động tri thức VN:</strong> Mô hình này cho thấy năng suất cá nhân có thể được nhân lên nhiều lần nhờ automation — người biết xây dựng hệ thống như vậy sẽ có lợi thế lớn trên thị trường lao động. Tuy nhiên, đây đòi hỏi kỹ năng engineering lẫn habit xây dựng kiến thức — hiếm ở VN hiện tại.</li>
+<li><strong>Cộng đồng Obsidian VN:</strong> Bài này xuất hiện trong group Obsidian Second Brain tiếng Việt — cho thấy nhu cầu PKM đang tăng ở VN, nhưng phần lớn người dùng còn ở giai đoạn lưu trữ thụ động, chưa đến giai đoạn compound automation như tác giả.</li>
+<li><strong>Cơ hội startup/service:</strong> Ở VN chưa có sản phẩm “personal knowledge harness as a service” — cơ hội cho developer muốn xây tool tương tự cho doanh nghiệp nhỏ hoặc cá nhân không có nền tảng engineering.</li>
+</ul>
+</div>
+</blockquote>
+<blockquote class="callout info" data-callout="info">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>📖 Giải thích thuật ngữ </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p><strong>Harness:</strong> Nghĩa đen là “bộ dây khai thác” (như dây cho ngựa). Trong lập trình, “harness” là framework/bộ công cụ điều phối nhiều thành phần. Ở đây tác giả dùng để chỉ orchestrator thống nhất quản lý toàn bộ hệ thống wiki.</p>
+<p><strong>Topic Bible:</strong> Tài liệu tổng hợp toàn diện về một chủ đề, được tái biên soạn tự động từ các khái niệm trong wiki. Giống như “cẩm nang” sống — luôn được cập nhật, không bao giờ lỗi thời.</p>
+<p><strong>Conductor pattern:</strong> Kiến trúc phần mềm có một “nhạc trưởng” đơn giản điều phối nhiều “nhạc công” (workers). Mỗi worker làm một việc chuyên biệt; conductor chỉ start/stop/monitor — không xử lý logic.</p>
+<p><strong>Jina Reader:</strong> API chuyển trang web thành markdown sạch, loại bỏ navigation, quảng cáo, và HTML rác — phù hợp để đưa vào LLM.</p>
+<p><strong>Deduplication:</strong> Phát hiện và gộp các trang/khái niệm trùng lặp hoặc rất giống nhau. Giống như phát hiện hai contact “Nguyễn Văn A” và “Anh Nguyễn” trong điện thoại là cùng một người.</p>
+</div>
+</blockquote></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Biểu Đồ</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-76" aria-expanded="true"><h3>Bảng Nội Dung</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-1" class="toc-content overflow"><li class="depth-0"><a href="#-phân-tích-bài-viết" data-for="-phân-tích-bài-viết">🔍 Phân tích bài viết</a></li><li class="depth-1"><a href="#️-mindmap" data-for="️-mindmap">🗺️ Mindmap</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>© 2026 Tạo và Như Ý</p><ul></ul></footer></div></div></body><script type="application/javascript">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

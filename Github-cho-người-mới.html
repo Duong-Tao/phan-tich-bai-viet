@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="vi" dir="ltr"><head><title>Github cho người mới</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Tạo và Như Ý cần đọc"/><meta property="og:title" content="Github cho người mới"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Github cho người mới"/><meta name="twitter:description" content="KHÔNG BIẾT CODE CÓ DÙNG ĐƯỢC REPO OPEN SOURCE KHÔNG? Câu trả lời là: Có! Nhưng đừng lao vào GitHub như một lập trình viên mà hãy đọc bài viết sau nếu bạn không phải coder Chi tiết bài Blog: compaclass.com/…/khong-biet-code-co-dung-uoc… Trước đây, mỗi lần nghe tới mấy chữ như GitHub, repo, open sourc..."/><meta property="og:description" content="KHÔNG BIẾT CODE CÓ DÙNG ĐƯỢC REPO OPEN SOURCE KHÔNG? Câu trả lời là: Có! Nhưng đừng lao vào GitHub như một lập trình viên mà hãy đọc bài viết sau nếu bạn không phải coder Chi tiết bài Blog: compaclass.com/…/khong-biet-code-co-dung-uoc… Trước đây, mỗi lần nghe tới mấy chữ như GitHub, repo, open sourc..."/><meta property="og:image:alt" content="KHÔNG BIẾT CODE CÓ DÙNG ĐƯỢC REPO OPEN SOURCE KHÔNG? Câu trả lời là: Có! Nhưng đừng lao vào GitHub như một lập trình viên mà hãy đọc bài viết sau nếu bạn không phải coder Chi tiết bài Blog: compaclass.com/…/khong-biet-code-co-dung-uoc… Trước đây, mỗi lần nghe tới mấy chữ như GitHub, repo, open sourc..."/><meta property="og:image" content="https://duong-tao.github.io/phan-tich-bai-viet/static/og-image.png"/><meta property="og:image:url" content="https://duong-tao.github.io/phan-tich-bai-viet/static/og-image.png"/><meta name="twitter:image" content="https://duong-tao.github.io/phan-tich-bai-viet/static/og-image.png"/><meta property="og:image:type" content="image/.png"/><meta property="twitter:domain" content="duong-tao.github.io/phan-tich-bai-viet"/><meta property="og:url" content="https://duong-tao.github.io/phan-tich-bai-viet/Github-cho-người-mới"/><meta property="twitter:url" content="https://duong-tao.github.io/phan-tich-bai-viet/Github-cho-người-mới"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="KHÔNG BIẾT CODE CÓ DÙNG ĐƯỢC REPO OPEN SOURCE KHÔNG? Câu trả lời là: Có! Nhưng đừng lao vào GitHub như một lập trình viên mà hãy đọc bài viết sau nếu bạn không phải coder Chi tiết bài Blog: compaclass.com/…/khong-biet-code-co-dung-uoc… Trước đây, mỗi lần nghe tới mấy chữ như GitHub, repo, open sourc..."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiRzpcXFRPT0xTXFxxdWFydHpcXHF1YXJ0elxcY29tcG9uZW50c1xcc3R5bGVzIiwic291cmNlcyI6WyJtZXJtYWlkLmlubGluZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFHRjtFQUNFOzs7QUFLRjtFQUNFO0VBQ0E7OztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFOztBQUlGO0VBQ0U7RUFDQTtFQUNBIiwic291cmNlc0NvbnRlbnQiOlsiLmV4cGFuZC1idXR0b24ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsb2F0OiByaWdodDtcbiAgcGFkZGluZzogMC40cmVtO1xuICBtYXJnaW46IDAuM3JlbTtcbiAgcmlnaHQ6IDA7IC8vIE5PVEU6IHJpZ2h0IHdpbGwgYmUgc2V0IGluIG1lcm1haWQuaW5saW5lLnRzXG4gIGNvbG9yOiB2YXIoLS1ncmF5KTtcbiAgYm9yZGVyLWNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICBib3JkZXI6IDFweCBzb2xpZDtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBvcGFjaXR5OiAwO1xuICB0cmFuc2l0aW9uOiAwLjJzO1xuXG4gICYgPiBzdmcge1xuICAgIGZpbGw6IHZhcigtLWxpZ2h0KTtcbiAgICBmaWx0ZXI6IGNvbnRyYXN0KDAuMyk7XG4gIH1cblxuICAmOmhvdmVyIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgYm9yZGVyLWNvbG9yOiB2YXIoLS1zZWNvbmRhcnkpO1xuICB9XG5cbiAgJjpmb2N1cyB7XG4gICAgb3V0bGluZTogMDtcbiAgfVxufVxuXG5wcmUge1xuICAmOmhvdmVyID4gLmV4cGFuZC1idXR0b24ge1xuICAgIG9wYWNpdHk6IDE7XG4gICAgdHJhbnNpdGlvbjogMC4ycztcbiAgfVxufVxuXG4jbWVybWFpZC1jb250YWluZXIge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIGNvbnRhaW46IGxheW91dDtcbiAgei1pbmRleDogOTk5O1xuICBsZWZ0OiAwO1xuICB0b3A6IDA7XG4gIHdpZHRoOiAxMDB2dztcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgZGlzcGxheTogbm9uZTtcbiAgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDRweCk7XG4gIGJhY2tncm91bmQ6IHJnYmEoMCwgMCwgMCwgMC41KTtcblxuICAmLmFjdGl2ZSB7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB9XG5cbiAgJiA+ICNtZXJtYWlkLXNwYWNlIHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHRvcDogNTAlO1xuICAgIGxlZnQ6IDUwJTtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbiAgICBoZWlnaHQ6IDgwdmg7XG4gICAgd2lkdGg6IDgwdnc7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcblxuICAgICYgPiAubWVybWFpZC1jb250ZW50IHtcbiAgICAgIHBhZGRpbmc6IDJyZW07XG4gICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICB0cmFuc2Zvcm0tb3JpZ2luOiAwIDA7XG4gICAgICB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMC4xcyBlYXNlO1xuICAgICAgb3ZlcmZsb3c6IHZpc2libGU7XG4gICAgICBtaW4taGVpZ2h0OiAyMDBweDtcbiAgICAgIG1pbi13aWR0aDogMjAwcHg7XG5cbiAgICAgIHByZSB7XG4gICAgICAgIG1hcmdpbjogMDtcbiAgICAgICAgYm9yZGVyOiBub25lO1xuICAgICAgfVxuXG4gICAgICBzdmcge1xuICAgICAgICBtYXgtd2lkdGg6IG5vbmU7XG4gICAgICAgIGhlaWdodDogYXV0bztcbiAgICAgIH1cbiAgICB9XG5cbiAgICAmID4gLm1lcm1haWQtY29udHJvbHMge1xuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgYm90dG9tOiAyMHB4O1xuICAgICAgcmlnaHQ6IDIwcHg7XG4gICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgZ2FwOiA4cHg7XG4gICAgICBwYWRkaW5nOiA4cHg7XG4gICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgYm9yZGVyLXJhZGl1czogNnB4O1xuICAgICAgYm94LXNoYWRvdzogMCAycHggNHB4IHJnYmEoMCwgMCwgMCwgMC4xKTtcbiAgICAgIHotaW5kZXg6IDI7XG5cbiAgICAgIC5tZXJtYWlkLWNvbnRyb2wtYnV0dG9uIHtcbiAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgIHdpZHRoOiAzMnB4O1xuICAgICAgICBoZWlnaHQ6IDMycHg7XG4gICAgICAgIHBhZGRpbmc6IDA7XG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgICAgY29sb3I6IHZhcigtLWRhcmspO1xuICAgICAgICBib3JkZXItcmFkaXVzOiA0cHg7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgZm9udC1zaXplOiAxNnB4O1xuICAgICAgICBmb250LWZhbWlseTogdmFyKC0tYm9keUZvbnQpO1xuICAgICAgICB0cmFuc2l0aW9uOiBhbGwgMC4ycyBlYXNlO1xuXG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIH1cblxuICAgICAgICAmOmFjdGl2ZSB7XG4gICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDFweCk7XG4gICAgICAgIH1cblxuICAgICAgICAvLyBTdHlsZSB0aGUgcmVzZXQgYnV0dG9uIGRpZmZlcmVudGx5XG4gICAgICAgICY6bnRoLWNoaWxkKDIpIHtcbiAgICAgICAgICB3aWR0aDogYXV0bztcbiAgICAgICAgICBwYWRkaW5nOiAwIDEycHg7XG4gICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG4iXX0= */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://duong-tao.github.io/phan-tich-bai-viet/index.xml"/></head><body data-slug="Github-cho-người-mới"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">Tạo và Như Ý cần đọc</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Tìm Kiếm</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Tìm kiếm thông tin" placeholder="Tìm kiếm thông tin"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Tối"><title>Tối</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Sáng"><title>Sáng</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Chế độ đọc"><title>Chế độ đọc</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="false" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-36"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Danh mục bài viết</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-36" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Github cho người mới</a></div></nav><h1 class="article-title">Github cho người mới</h1><p show-comma="true" class="content-meta"><time datetime="2026-04-13T17:00:00.000Z">14 thg 4, 2026</time><span>đọc 16 phút</span></p><ul class="tags"><li><a href="./tags/clippings" class="internal tag-link">clippings</a></li><li><a href="./tags/analyzed" class="internal tag-link">analyzed</a></li></ul><div class="text-size" role="group" aria-label="Chọn cỡ chữ"><button data-size="small" title="Chữ nhỏ" aria-label="Chữ nhỏ"><span class="a-small">A</span><span class="lbl">Nhỏ</span></button><button data-size="medium" title="Chữ vừa" aria-label="Chữ vừa"><span class="a-medium">A</span><span class="lbl">Vừa</span></button><button data-size="large" title="Chữ lớn" aria-label="Chữ lớn"><span class="a-large">A</span><span class="lbl">Lớn</span></button></div></div></div><article class="popover-hint"><p>KHÔNG BIẾT CODE CÓ DÙNG ĐƯỢC REPO OPEN SOURCE KHÔNG?</p>
+<p>Câu trả lời là: Có! Nhưng đừng lao vào GitHub như một lập trình viên mà hãy đọc bài viết sau nếu bạn không phải coder<img src="https://static.xx.fbcdn.net/images/emoji.php/v9/td2/1/16/1f604.png" alt="😄"/></p>
+<p><img src="https://static.xx.fbcdn.net/images/emoji.php/v9/t51/1/16/1f449.png" alt="👉"/> Chi tiết bài Blog: <a href="https://compaclass.com/blog/p/khong-biet-code-co-dung-uoc-repo-open-source-khong-TkHz4?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExeUdNRFR4c3d2eG5UTmQyS3NydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR4F7I4m0VccXSNmEY6NC7Y8TIm7mNpjqxw4ozvutK310fme-nN7MaGLeY7Bgw_aem_3wSBKkw0CiRYfdHqajN8_A" class="external">https://compaclass.com/…/khong-biet-code-co-dung-uoc…<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p>Trước đây, mỗi lần nghe tới mấy chữ như GitHub, repo, open source, clone, deploy… là nhiều anh chị em không làm kỹ thuật thường có phản xạ rất tự nhiên:</p>
+<p>“Thôi cái này chắc không dành cho mình.”</p>
+<p>“Nhìn toàn chữ tiếng Anh với code, đóng tab cho lành.”</p>
+<p>“Em chỉ biết Excel, Word, PowerPoint thôi anh ơi…” <img src="https://static.xx.fbcdn.net/images/emoji.php/v9/t53/1/16/1f605.png" alt="😅"/></p>
+<p>Đức nghĩ điều này rất bình thường, và quả thật trong nhiều chương trình Mentor với các bạn ở nước ngoài, mình cũng “thẳng thắn” luôn, các bạn đừng có ham mà show Project và Portfolio trên Github vì Recruiter họ mở ra là đóng ngay <img src="https://static.xx.fbcdn.net/images/emoji.php/v9/td2/1/16/1f604.png" alt="😄"/>.</p>
+<p><img src="https://static.xx.fbcdn.net/images/emoji.php/v9/t51/1/16/1f449.png" alt="👉"/> Cuối cùng cả nhóm theo hướng dẫn tự Vibe Coding luôn website cá nhân, nào là host trên Github Pages, hoặc dùng Lovable, Vercell, Wix, … rất đa dạng.</p>
+<p>Vì nhiều năm trước, GitHub đúng là giống một “khu rừng kỹ thuật” hơn là một nơi thân thiện với người mới. Nhưng bây giờ, nhờ AI, nhờ các công cụ agent, nhờ các repo được đóng gói tốt hơn, người không biết lập trình vẫn có thể bắt đầu tận dụng open source theo cách rất thực tế.</p>
+<p>Không phải để trở thành developer ngay.</p>
+<p>Mà để “biết dùng công cụ mạnh hơn, thử nghiệm nhanh hơn, và bớt phụ thuộc hơn”.</p>
+<p><img src="https://static.xx.fbcdn.net/images/emoji.php/v9/t51/1/16/1f449.png" alt="👉"/> Thay vì bạn bỏ <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">5</span><span class="mord">−</span></span></span></span>10 cho một ứng dụng dịch thuật thì đã có <a href="https://github.com/phuc-nt/my-translator?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExeUdNRFR4c3d2eG5UTmQyS3NydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR49cxH9Ov1ZspUZgNobBmLk73eQyfskjylI0fglPGcP-1_c1SftbKJbuEIjJQ_aem_GTZ42S-XqARYIIprTHvd0w" class="external">https://github.com/phuc-nt/my-translator<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p><img src="https://static.xx.fbcdn.net/images/emoji.php/v9/t51/1/16/1f449.png" alt="👉"/> Thay vì bạn trả phí cho elevenlab thì có thể tạo và clone giọng nói tại <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fgithub.com%2Fmicrosoft%2FVibeVoice%3Ffbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExeUdNRFR4c3d2eG5UTmQyS3NydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR4F7I4m0VccXSNmEY6NC7Y8TIm7mNpjqxw4ozvutK310fme-nN7MaGLeY7Bgw_aem_3wSBKkw0CiRYfdHqajN8_A&amp;h=AT5hTJaeJeYfyGHts0iUKm2ekxpX5rlLXuhIN-qCnF1zS0ShonbebRld1LN4X-2_NX_-pyqmnyvZhanY6e5joVtXy_xDq977gAFOHI-xJrv8SFVi5ddRg5J2sEuqOccJRfpZQGHa23stjpKJ&amp;__tn__=-UK-R&amp;c%5B0%5D=AT4Fx-gMYXJEukDL5wX5VmQNIFX-5aFjlOqu3H66roQGBF8MamDucRH0joj4Zttp55OxfMljZgGw-EiYi-JslTu9OHu9yQW8xLgEHUkCl4h1dvxqCewVyk53wV3Yakj1I3EOZkvucTaN7W3lLUqZWriomXhqwfuhoch0syhiS8BePb2yJqJ-_qy44eW3Xto2mYWCGmHdpSSJC44afKOjEZM0IdudObmJ5vWh5bWYcECf" class="external">https://github.com/microsoft/VibeVoice<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p><img src="https://static.xx.fbcdn.net/images/emoji.php/v9/t51/1/16/1f449.png" alt="👉"/> Thay vì bạn phải vẽ và thiết kế hình ảnh, quy trình bằng tay thì đã có <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fgithub.com%2Fexcalidraw%2Fexcalidraw%3Ffbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExeUdNRFR4c3d2eG5UTmQyS3NydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR7C4i1uSXHRfTGb5tGOsYYMVVkCqP4NMuaNm_KjKLJFTR0hROFGOC2JVjFokw_aem_gix7DUSNmjNaLekMjIadeA&amp;h=AT5rJMk9mYu3tVS-h8DDzC2b2hQshKAX4gdsg4kQsYXrDKKPxuGA87Vu88d94NbsFDTMwYSQ12RK77EM0uaZlE68ToE0O-_KkGBV1A4FfMdmHhKHDMX-pTCFyM83VDrLO1NMOe821Dz4vXEn&amp;__tn__=-UK-R&amp;c%5B0%5D=AT4Fx-gMYXJEukDL5wX5VmQNIFX-5aFjlOqu3H66roQGBF8MamDucRH0joj4Zttp55OxfMljZgGw-EiYi-JslTu9OHu9yQW8xLgEHUkCl4h1dvxqCewVyk53wV3Yakj1I3EOZkvucTaN7W3lLUqZWriomXhqwfuhoch0syhiS8BePb2yJqJ-_qy44eW3Xto2mYWCGmHdpSSJC44afKOjEZM0IdudObmJ5vWh5bWYcECf" class="external">https://github.com/excalidraw/excalidraw<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p>Tất nhiên là còn nhiều giải pháp opensource nhiều sao và hot hơn nữa nhưng những tool trên mình có thử và thấy khá hiệu quả và đặc biệt là miễn phí. Cái duy nhất là “khó tiếp cận” cho người không biết code hoặc sợ chạm vào code / tiếng Anh.</p>
+<p>---</p>
+<p>𝐆𝐢𝐭𝐇𝐮𝐛 𝐯𝐚̀ 𝐫𝐞𝐩𝐨 𝐥𝐚̀ 𝐠𝐢̀, 𝐧𝐨́𝐢 đ𝐨̛𝐧 𝐠𝐢𝐚̉𝐧 𝐭𝐡𝐨̂𝐢?</p>
+<p>Nếu giải thích dễ hiểu, “GitHub” giống như một “kho chứa dự án số” trên internet. Còn “Repo” giống như một “thư mục dự án thông minh”, bên trong có thể chứa:</p>
+<p>- mã nguồn,</p>
+<p>- tài liệu hướng dẫn,</p>
+<p>- file demo,</p>
+<p>- giao diện mẫu,</p>
+<p>- công cụ cài đặt,</p>
+<p>- thậm chí là cả một phần mềm gần hoàn chỉnh.</p>
+<p>Với lập trình viên, GitHub là nơi để viết và quản lý code.</p>
+<p>Nhưng với người không biết code, GitHub vẫn có thể là nơi để:</p>
+<p>- tìm công cụ open source,</p>
+<p>- đọc hướng dẫn,</p>
+<p>- tải về phần mềm,</p>
+<p>- lưu một trang web đơn giản,</p>
+<p>- hoặc dùng AI để tạo ra một sản phẩm nhỏ rồi chia sẻ cho người khác.</p>
+<p>Nói vui một chút: “GitHub không chỉ là nơi dân dev “đẩy code”. Với người mới, nó có thể là nơi ta “đẩy sự tự tin” lên internet.” <img src="https://static.xx.fbcdn.net/images/emoji.php/v9/tc6/1/16/1f680.png" alt="🚀"/></p>
+<p>---</p>
+<p>𝐔̛́𝐧𝐠 𝐝𝐮̣𝐧𝐠 đ𝐨̛𝐧 𝐠𝐢𝐚̉𝐧 𝐧𝐡𝐚̂́𝐭: 𝐭𝐚̣𝐨 𝐦𝐨̣̂𝐭 𝐭𝐫𝐚𝐧𝐠 𝐰𝐞𝐛 𝐛𝐚̆̀𝐧𝐠 𝐀𝐈 𝐫𝐨̂̀𝐢 đ𝐮̛𝐚 𝐥𝐞̂𝐧 𝐆𝐢𝐭𝐇𝐮𝐛 𝐦𝐢𝐞̂̃𝐧 𝐩𝐡𝐢́</p>
+<p>Đây là ví dụ Đức rất thích. Ngày xưa muốn làm một website đơn giản, nhiều người nghĩ phải thuê dev, mua hosting, mua domain, rồi cài đặt đủ thứ.</p>
+<p>Bây giờ, với một trang web tĩnh đơn giản, ta có thể làm nhẹ nhàng hơn nhiều:</p>
+<p>1. Dùng AI tạo một file HTML.</p>
+<p>2. Chỉnh lại nội dung theo ý mình.</p>
+<p>3. Đưa lên GitHub.</p>
+<p>4. Bật GitHub Pages.</p>
+<p>5. Có ngay một đường link để chia sẻ.</p>
+<p>Dùng để làm gì?</p>
+<p>- Trang giới thiệu cá nhân.</p>
+<p>- Portfolio dự án.</p>
+<p>- Landing page khóa học.</p>
+<p>- Trang giới thiệu sự kiện nội bộ.</p>
+<p>- Trang tài liệu đơn giản.</p>
+<p>- Mini tool nhỏ chạy bằng HTML/CSS/JavaScript.</p>
+<p>Tất nhiên, đừng hiểu nhầm là làm được luôn Shopee, Facebook hay hệ thống ngân hàng lõi nhé. <img src="https://static.xx.fbcdn.net/images/emoji.php/v9/td2/1/16/1f604.png" alt="😄"/></p>
+<p>Website kiểu này phù hợp với các nhu cầu đơn giản hay còn gọi là trang web tĩnh “Static sites”. Còn nếu có đăng nhập, database, thanh toán, bảo mật phức tạp… thì lúc đó vẫn cần kỹ thuật nghiêm túc.</p>
+<p>Nhưng với người mới, chỉ cần tạo được một trang web đầu tiên và gửi link cho người khác xem, cảm giác đã rất “đã”.</p>
+<p>Tôi vẫn hay nói với học viên: “Lần đầu đưa được một file HTML lên mạng, nhiều khi cảm giác còn vui hơn cả nhận lương. Vì ít nhất mình thấy: à, hóa ra mình cũng tạo được sản phẩm số.” <img src="https://static.xx.fbcdn.net/images/emoji.php/v9/td2/1/16/1f604.png" alt="😄"/></p>
+<p>---</p>
+<p>𝐀𝐈 𝐚𝐠𝐞𝐧𝐭 đ𝐚𝐧𝐠 𝐥𝐚̀𝐦 𝐆𝐢𝐭𝐇𝐮𝐛 𝐛𝐨̛́𝐭 đ𝐚́𝐧𝐠 𝐬𝐨̛̣ 𝐡𝐨̛𝐧</p>
+<p>Điểm khác biệt lớn của giai đoạn này là: người mới không còn phải một mình ngồi nhìn repo rồi hoang mang nữa.</p>
+<p>Các công cụ AI agent hoặc AI coding assistant như Google Antigravity, Cursor, Claude Code, Copilot… đang giúp việc tiếp cận repo open source dễ thở hơn nhiều.</p>
+<p>Thay vì mở repo ra rồi tự hỏi:</p>
+<p>- “Ủa file nào là file chính?”</p>
+<p>- “Cài cái này kiểu gì?”</p>
+<p>- “Sao chạy lỗi?”</p>
+<p>- “README viết cho người ngoài hành tinh à?” <img src="https://static.xx.fbcdn.net/images/emoji.php/v9/td9/1/16/1f47d.png" alt="👽"/></p>
+<p>Bây giờ ta có thể hỏi AI:</p>
+<p>- Repo này dùng để làm gì?</p>
+<p>- Tôi không biết code, hãy giải thích cấu trúc cho tôi.</p>
+<p>- Hướng dẫn tôi cài đặt và chạy thử từng bước.</p>
+<p>- File nào cần chỉnh nếu tôi muốn đổi giao diện?</p>
+<p>- Lỗi này nghĩa là gì?</p>
+<p>- Tôi có thể dùng repo này cho bài toán của mình không?</p>
+<p>AI không biến người không biết code thành senior developer sau một đêm, nhưng nó làm một việc rất quan trọng: “AI không xóa hết độ khó của open source, nhưng nó biến bức tường kỹ thuật thành một cái dốc dễ leo hơn.”</p>
+<p>Và với nhiều người, chỉ cần “dễ leo hơn” là đã đủ để bắt đầu.</p>
+<p>---</p>
+<p>𝐍𝐡𝐮̛𝐧𝐠 đ𝐮̛̀𝐧𝐠 𝐅𝐎𝐌𝐎: 𝐤𝐡𝐨̂𝐧𝐠 𝐩𝐡𝐚̉𝐢 𝐫𝐞𝐩𝐨 𝐧𝐚̀𝐨 𝐜𝐮̃𝐧𝐠 𝐝𝐚̀𝐧𝐡 𝐜𝐡𝐨 𝐧𝐠𝐮̛𝐨̛̀𝐢 𝐦𝐨̛́𝐢</p>
+<p>Đây là phần phải nói thật.</p>
+<p>- Không phải cứ repo nhiều sao là phù hợp với mình.</p>
+<p>- Không phải cứ open source là dễ dùng.</p>
+<p>- Không phải cứ AI hỗ trợ là cài cái gì cũng chạy.</p>
+<p><img src="https://static.xx.fbcdn.net/images/emoji.php/v9/t51/1/16/1f449.png" alt="👉"/> Có những repo sinh ra cho developer.</p>
+<p><img src="https://static.xx.fbcdn.net/images/emoji.php/v9/t51/1/16/1f449.png" alt="👉"/> Có những repo dành cho đội kỹ thuật triển khai sản phẩm.</p>
+<p><img src="https://static.xx.fbcdn.net/images/emoji.php/v9/t51/1/16/1f449.png" alt="👉"/> Có những repo mở ra nhìn README thôi là muốn pha trà gừng, xoa dầu gió rồi đi ngủ. <img src="https://static.xx.fbcdn.net/images/emoji.php/v9/td2/1/16/1f604.png" alt="😄"/></p>
+<p>Người không biết code nên ưu tiên các repo có:</p>
+<p>- hướng dẫn rõ ràng,</p>
+<p>- có ảnh demo,</p>
+<p>- có video hướng dẫn,</p>
+<p>- có Docker hoặc bản cài đơn giản,</p>
+<p>- có cộng đồng dùng thật,</p>
+<p>- có giao diện người dùng,</p>
+<p>- có tài liệu cho người mới.</p>
+<p>Đừng hỏi đầu tiên: “Repo nào đang hot?”</p>
+<p><img src="https://static.xx.fbcdn.net/images/emoji.php/v9/t51/1/16/1f449.png" alt="👉"/> Hãy hỏi: “Tôi đang muốn giải quyết việc gì?”</p>
+<p>Vì công cụ mà không gắn với bài toán thì chỉ là một món đồ chơi công nghệ. Nhớ lời của tôi nhé: “Open source không cứu được người chưa rõ bài toán. Nó chỉ làm người đó rối nhanh hơn.”</p>
+<p>Câu này hơi phũ, nhưng thật. Đôi khi bạn không cần 1 repo nổi tiếng nhiều sao nhưng một số repo đơn giản và giải quyết đúng nhu cầu đã tiết kiệm cho bạn nhiều tiền rồi đó.</p>
+<p>---</p>
+<p>𝐍𝐠𝐮̛𝐨̛̀𝐢 𝐤𝐡𝐨̂𝐧𝐠 𝐛𝐢𝐞̂́𝐭 𝐜𝐨𝐝𝐞 𝐜𝐨́ 𝐭𝐡𝐞̂̉ 𝐛𝐚̆́𝐭 đ𝐚̂̀𝐮 𝐭𝐮̛̀ đ𝐚̂𝐮?</p>
+<p>Nếu mới bắt đầu, Đức nghĩ nên thử những thứ đơn giản trước:</p>
+<p><img src="https://static.xx.fbcdn.net/images/emoji.php/v9/tf3/1/16/1f539.png" alt="🔹"/> Tạo một trang web HTML bằng AI rồi đưa lên GitHub Pages.</p>
+<p><img src="https://static.xx.fbcdn.net/images/emoji.php/v9/tf3/1/16/1f539.png" alt="🔹"/> Dùng một repo có giao diện sẵn để quản lý tài liệu, ghi chú hoặc knowledge base.</p>
+<p><img src="https://static.xx.fbcdn.net/images/emoji.php/v9/tf3/1/16/1f539.png" alt="🔹"/> Thử các công cụ AI để hỏi đáp và giải thích hướng dẫn các tính năng cơ bản nhất trên Github</p>
+<p><img src="https://static.xx.fbcdn.net/images/emoji.php/v9/tf3/1/16/1f539.png" alt="🔹"/> Dùng AI agent (Google Antigravity / Claude) để đọc, giải thích và hướng dẫn chạy thử một repo đơn giản.</p>
+<p>Đừng bắt đầu bằng mục tiêu quá to kiểu: “Tôi muốn clone một hệ thống như Notion + ChatGPT + CRM + LMS + tự động hóa marketing + có AI agent bán hàng.”</p>
+<p>Nghe xong là server chưa cháy, người đã cháy trước. <img src="https://static.xx.fbcdn.net/images/emoji.php/v9/t50/1/16/1f525.png" alt="🔥"/><img src="https://static.xx.fbcdn.net/images/emoji.php/v9/td2/1/16/1f604.png" alt="😄"/></p>
+<p>Hãy bắt đầu nhỏ:</p>
+<p>- một trang web,</p>
+<p>- một workflow,</p>
+<p>- một form,</p>
+<p>- một dashboard,</p>
+<p>- một chatbot nội bộ,</p>
+<p>- một công cụ quản lý tài liệu.</p>
+<p>Nhỏ nhưng chạy được còn hơn lớn mà nằm trên slide. <img src="https://static.xx.fbcdn.net/images/emoji.php/v9/td0/1/16/1f602.png" alt="😂"/></p>
+<p>---</p>
+<p>𝐎𝐩𝐞𝐧 𝐬𝐨𝐮𝐫𝐜𝐞 𝐤𝐡𝐨̂𝐧𝐠 𝐦𝐢𝐞̂̃𝐧 𝐩𝐡𝐢́ 𝐭𝐡𝐞𝐨 𝐜𝐚́𝐜𝐡 𝐧𝐡𝐢𝐞̂̀𝐮 𝐧𝐠𝐮̛𝐨̛̀𝐢 𝐭𝐮̛𝐨̛̉𝐧𝐠</p>
+<p>Đây là một hiểu lầm rất phổ biến. Open source có thể miễn phí license, nhưng không có nghĩa là miễn phí toàn bộ.</p>
+<p>Bạn vẫn có thể phải trả bằng:</p>
+<p>- thời gian học,</p>
+<p>- công sức cài đặt,</p>
+<p>- chi phí server,</p>
+<p>- công bảo trì,</p>
+<p>- công sửa lỗi,</p>
+<p>- và đôi khi là vài buổi “tự vấn cuộc đời” vì chạy mãi không lên. <img src="https://static.xx.fbcdn.net/images/emoji.php/v9/td2/1/16/1f604.png" alt="😄"/></p>
+<p>Nên nhìn open source thực tế hơn thì tôi vẫn khuyên bạn nên nhớ rằng: “Open source không phải bữa buffet miễn phí. Nó giống một căn bếp mở: nguyên liệu có sẵn, nhưng nấu ngon hay không vẫn cần người biết món mình muốn ăn.”</p>
+<p>Vậy có nên dùng không? Có. Rất nên.</p>
+<p>Nhưng nên dùng với tâm thế tỉnh táo:</p>
+<p>1. Dùng để thử nghiệm nhanh,</p>
+<p>2. Học cách công nghệ vận hành,</p>
+<p>3. Kiểm chứng ý tưởng,</p>
+<p>4. Giảm phụ thuộc vendor,</p>
+<p>5. Tạo prototype,</p>
+<p>6. Và khi cần scale / go live thì mời người có chuyên môn kỹ thuật vào cuộc để tư vấn và triển khai chuẩn chỉ.</p>
+<p>---</p>
+<p>𝐍𝐠𝐮̛𝐨̛̀𝐢 𝐤𝐡𝐨̂𝐧𝐠 𝐛𝐢𝐞̂́𝐭 𝐜𝐨𝐝𝐞 𝐧𝐞̂𝐧 𝐧𝐡𝐢̀𝐧 𝐨𝐩𝐞𝐧 𝐬𝐨𝐮𝐫𝐜𝐞 𝐧𝐡𝐮̛ 𝐭𝐡𝐞̂́ 𝐧𝐚̀𝐨?</p>
+<p>Không cần biến mình thành lập trình viên, cũng không nên đứng ngoài chỉ vì sợ. Hãy coi open source là một “đòn bẩy” !</p>
+<p>- Một người làm đào tạo có thể dùng nó để tạo công cụ học tập.</p>
+<p>- Một người làm marketing có thể tạo landing page thử nghiệm.</p>
+<p>- Một founder có thể dựng prototype sản phẩm.</p>
+<p>- Một team vận hành có thể thử automation nội bộ.</p>
+<p>- Một người mới học AI có thể hiểu cách các ứng dụng AI thật sự được xây dựng.</p>
+<p>Điểm quan trọng không phải là bạn biết bao nhiêu dòng code. Điểm quan trọng là:</p>
+<p>- bạn hiểu bài toán không,</p>
+<p>- bạn biết chọn công cụ không,</p>
+<p>- bạn biết hỏi AI đúng cách không,</p>
+<p>- và bạn biết khi nào nên tự làm, khi nào nên nhờ người giỏi hơn.</p>
+<p>Tôi vẫn luôn nhắc nhở học viên của mình: “Người thắng trong thời đại AI chưa chắc là người code giỏi nhất. Nhiều khi là người hiểu bài toán rõ nhất và biết tận dụng đúng công cụ nhất.”</p>
+<p>---</p>
+<p>𝐂𝐡𝐨̂́𝐭 𝐥𝐚̣𝐢 𝐦𝐨̣̂𝐭 𝐜𝐚̂𝐮</p>
+<p>Không biết code vẫn có thể dùng GitHub và repo open source.</p>
+<p>Nhưng đừng bắt đầu bằng tâm thế “tôi phải hiểu hết mọi thứ”.</p>
+<p>Hãy bắt đầu bằng một việc nhỏ:</p>
+<p>- tạo một trang web,</p>
+<p>- thử một repo đơn giản,</p>
+<p>- nhờ AI giải thích,</p>
+<p>- chạy một demo,</p>
+<p>- sửa một dòng nội dung để customize theo nhu cầu</p>
+<p>- chia sẻ một link sản phẩm đầu tiên.</p>
+<p>Làm được một bước, sẽ bớt sợ bước tiếp theo. Các cụ mà sống thời AI chắc cũng sẽ dặn: “Có công mài sắt, có ngày… deploy được code” Giờ đến cả CEO low tech cũng biết deploy app mà <img src="https://static.xx.fbcdn.net/images/emoji.php/v9/td2/1/16/1f604.png" alt="😄"/>.</p>
+<p>Chúc anh chị em không biết code nhưng vẫn dám bước vào thế giới open source. Không cần trở thành lập trình viên ngay. Chỉ cần trở thành một người dùng công nghệ thông minh hơn mỗi ngày. <img src="https://static.xx.fbcdn.net/images/emoji.php/v9/tc6/1/16/1f680.png" alt="🚀"/></p>
+<h2 id><img src="./Github-cho-người-mới.png" width="auto" height="auto" alt/></h2>
+<h2 id="-phân-tích-bài-viết">🔍 Phân tích bài viết<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-phân-tích-bài-viết" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="-tóm-tắt-ý-chính">📌 Tóm tắt ý chính<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-tóm-tắt-ý-chính" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>GitHub và open source không còn là “lãnh địa riêng” của lập trình viên. Nhờ AI agent (Claude Code, Copilot, Cursor), người không biết code vẫn có thể tận dụng các repo để tạo trang web cá nhân, dùng tool miễn phí, thử nghiệm prototype mà không cần chi tiền. Tuy nhiên, open source không thực sự “miễn phí” — bạn vẫn trả bằng thời gian, công bảo trì, chi phí server. Chiến lược đúng: bắt đầu nhỏ, chọn repo có hướng dẫn rõ, xác định bài toán trước khi chọn công cụ.</p>
+<h3 id="️-mindmap">🗺️ Mindmap<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#️-mindmap" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure class="canvas-mindmap"><div class="cv-toolbar"><button type="button" class="cv-btn cv-zoom-out" title="Thu nhỏ" aria-label="Thu nhỏ">−</button><button type="button" class="cv-btn cv-reset" title="Về vị trí gốc" aria-label="Về vị trí gốc">⟲</button><button type="button" class="cv-btn cv-zoom-in" title="Phóng to" aria-label="Phóng to">+</button><button type="button" class="cv-btn cv-fullscreen-toggle" title="Toàn màn hình" aria-label="Toàn màn hình">⛶</button></div><div class="cv-canvas-wrap"><svg viewBox="-748 -348 1276 566" xmlns="http://www.w3.org/2000/svg" width="100%" style="height:auto;display:block;touch-action:none;"><defs><marker id="cv-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7d8896"></path></marker></defs><g class="cv-zoom-layer"><path d="M -200 -50 C -200 -145, -420 -145, -420 -240" fill="none" stroke="#7d8896" stroke-width="2.5" marker-end="url(#cv-arrow)" opacity="0.65"></path><path d="M -200 -50 C -200 -60, -420 -60, -420 -70" fill="none" stroke="#7d8896" stroke-width="2.5" marker-end="url(#cv-arrow)" opacity="0.65"></path><path d="M -200 -50 C -200 30, -420 30, -420 110" fill="none" stroke="#7d8896" stroke-width="2.5" marker-end="url(#cv-arrow)" opacity="0.65"></path><path d="M 200 -50 C 200 -145, 200 -145, 200 -240" fill="none" stroke="#7d8896" stroke-width="2.5" marker-end="url(#cv-arrow)" opacity="0.65"></path><path d="M 200 -50 C 200 -60, 200 -60, 200 -70" fill="none" stroke="#7d8896" stroke-width="2.5" marker-end="url(#cv-arrow)" opacity="0.65"></path><path d="M 200 -50 C 200 30, 200 30, 200 110" fill="none" stroke="#7d8896" stroke-width="2.5" marker-end="url(#cv-arrow)" opacity="0.65"></path><g><rect x="-200" y="-80" width="400" height="60" rx="14" fill="#161b22" stroke="#4aa3c4" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="0" y="-47" font-size="18" font-weight="700" fill="#4aa3c4">GitHub cho người không biết code</tspan></text></g><g><rect x="-700" y="-300" width="280" height="120" rx="14" fill="#161b22" stroke="#d9bb3f" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="-560" y="-267" font-size="18" font-weight="700" fill="#d9bb3f">GitHub là gì?</tspan><tspan x="-560" y="-240" font-size="15" font-weight="400" fill="#e6edf3">- Kho chứa dự án số</tspan><tspan x="-560" y="-219" font-size="15" font-weight="400" fill="#e6edf3">- Repo = thư mục dự án thông</tspan><tspan x="-560" y="-198" font-size="15" font-weight="400" fill="#e6edf3">minh</tspan></text></g><g><rect x="-700" y="-130" width="280" height="120" rx="14" fill="#161b22" stroke="#6fbf73" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="-560" y="-97" font-size="18" font-weight="700" fill="#6fbf73">Open Source</tspan><tspan x="-560" y="-70" font-size="15" font-weight="400" fill="#e6edf3">- Miễn phí license</tspan><tspan x="-560" y="-49" font-size="15" font-weight="400" fill="#e6edf3">- Nhưng tốn: thời gian, server,</tspan><tspan x="-560" y="-28" font-size="15" font-weight="400" fill="#e6edf3">bảo trì</tspan></text></g><g><rect x="-700" y="50" width="280" height="120" rx="14" fill="#161b22" stroke="#e0954a" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="-560" y="83" font-size="18" font-weight="700" fill="#e0954a">AI Agent</tspan><tspan x="-560" y="110" font-size="15" font-weight="400" fill="#e6edf3">- Giải thích repo</tspan><tspan x="-560" y="131" font-size="15" font-weight="400" fill="#e6edf3">- Cursor, Claude Code, Copilot</tspan><tspan x="-560" y="152" font-size="15" font-weight="400" fill="#e6edf3">- Bức tường → dốc dễ leo</tspan></text></g><g><rect x="200" y="-300" width="280" height="120" rx="14" fill="#161b22" stroke="#a98edb" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="340" y="-267" font-size="18" font-weight="700" fill="#a98edb">Ứng dụng thực tế</tspan><tspan x="340" y="-240" font-size="15" font-weight="400" fill="#e6edf3">- GitHub Pages (web miễn phí)</tspan><tspan x="340" y="-219" font-size="15" font-weight="400" fill="#e6edf3">- Tool dịch thuật, clone giọng</tspan><tspan x="340" y="-198" font-size="15" font-weight="400" fill="#e6edf3">- Excalidraw vẽ sơ đồ</tspan></text></g><g><rect x="200" y="-130" width="280" height="120" rx="14" fill="#161b22" stroke="#f0716e" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="340" y="-97" font-size="18" font-weight="700" fill="#f0716e">Không phải repo nào cũng</tspan><tspan x="340" y="-70" font-size="18" font-weight="700" fill="#f0716e">dùng được</tspan><tspan x="340" y="-43" font-size="15" font-weight="400" fill="#e6edf3">- Ưu tiên: có demo, Docker,</tspan><tspan x="340" y="-22" font-size="15" font-weight="400" fill="#e6edf3">cộng đồng</tspan><tspan x="340" y="-1" font-size="15" font-weight="400" fill="#e6edf3">- Hỏi bài toán trước, không hỏi</tspan><tspan x="340" y="20" font-size="15" font-weight="400" fill="#e6edf3">'hot' nhất</tspan></text></g><g><rect x="200" y="50" width="280" height="120" rx="14" fill="#161b22" stroke="#6fbf73" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="340" y="83" font-size="18" font-weight="700" fill="#6fbf73">Bắt đầu nhỏ</tspan><tspan x="340" y="110" font-size="15" font-weight="400" fill="#e6edf3">- 1 trang web HTML</tspan><tspan x="340" y="131" font-size="15" font-weight="400" fill="#e6edf3">- 1 workflow đơn giản</tspan><tspan x="340" y="152" font-size="15" font-weight="400" fill="#e6edf3">- Nhỏ mà chạy > lớn mà slide</tspan></text></g></g></svg></div></figure>
+<h3 id="-insight--góc-nhìn-đa-chiều">💡 Insight &amp; Góc nhìn đa chiều<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-insight--góc-nhìn-đa-chiều" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Xu hướng đang hình thành:</strong> AI đang “dân chủ hóa” công nghệ theo cách triệt để hơn bất kỳ giai đoạn nào trước đó. Trước đây “no-code” chỉ hạ thấp ngưỡng kỹ thuật; nay AI agent còn giải thích, debug, và hướng dẫn theo ngữ cảnh — giống như có kỹ sư kèm riêng.</p>
+<p><strong>Ai được lợi:</strong></p>
+<ul>
+<li>Non-technical founder, marketer, educator: làm được thứ trước đây phải thuê dev</li>
+<li>Hệ sinh thái AI tools (Cursor, Claude, GitHub Copilot): số người dùng tăng vọt khi ngưỡng vào thấp hơn</li>
+</ul>
+<p><strong>Ai bị thiệt:</strong></p>
+<ul>
+<li>Freelance dev làm task đơn giản (build landing page, clone UI): giá trị công việc đang mất dần</li>
+<li>Người học “no-code” thuần: sẽ bị lỗi thời nếu không chuyển sang “AI-assisted code”</li>
+</ul>
+<p><strong>Điều ẩn sau bề mặt:</strong> Bài viết có xu hướng lạc quan một chiều. Thực tế khi người không biết code tự deploy, họ dễ tạo ra ứng dụng có lỗ hổng bảo mật nghiêm trọng mà không biết. Dân chủ hóa kỹ thuật đi kèm dân chủ hóa rủi ro.</p>
+<h3 id="️-phản-biện">⚖️ Phản biện<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#️-phản-biện" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>1. “AI biến bức tường thành dốc dễ leo” — đúng nhưng chưa đủ.</strong>
+AI giúp bắt đầu dễ hơn, nhưng không giúp bạn duy trì hoặc scale. Khi repo cần cập nhật dependency, vá bảo mật, hay tích hợp với hệ thống khác — người không biết code sẽ lại bí. Dốc dễ leo lên, nhưng đứng trên đỉnh thì không biết làm gì tiếp.</p>
+<p><strong>2. GitHub Pages không phải giải pháp tốt nhất cho người mới.</strong>
+Bài đề xuất GitHub Pages như bước đầu lý tưởng, nhưng Vercel/Netlify dễ dùng hơn nhiều (không cần biết git push), và nhiều nền tảng như Notion Sites, Carrd còn phù hợp hơn cho use case đơn giản — không cần đụng vào terminal.</p>
+<p><strong>3. Rủi ro bảo mật bị bỏ qua hoàn toàn.</strong>
+Khi người không biết code clone repo có API key trong file cấu hình rồi deploy lên cloud mà không biết cách bảo vệ — đây là nguồn gốc của vô số vụ lộ dữ liệu. Bài viết không đề cập dù đây là rủi ro thực tế và rất phổ biến.</p>
+<h3 id="-câu-hỏi-mở">❓ Câu hỏi mở<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-câu-hỏi-mở" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>Khi AI hạ ngưỡng kỹ thuật quá thấp, khái niệm “biết lập trình” sẽ phân tầng ra sao — và tầng nào vẫn còn giá trị thị trường trong 5 năm tới?</li>
+<li>Các công ty sẽ phản ứng thế nào khi nhân viên non-tech tự build và deploy tool nội bộ, tạo ra “shadow IT” ngày càng phức tạp và khó kiểm soát?</li>
+<li>Open source licensing (MIT, GPL, AGPL) có ý nghĩa gì với người dùng end-user không biết code — và rủi ro pháp lý có thực sự tồn tại không khi dùng trong môi trường thương mại?</li>
+</ol>
+<h3 id="-liên-hệ-việt-nam">🇻🇳 Liên hệ Việt Nam<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-liên-hệ-việt-nam" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Thị trường lao động IT:</strong> Freelance dev làm task cơ bản (landing page, CRUD app đơn giản) sẽ chịu áp lực lớn. Nhưng dev hiểu kiến trúc hệ thống, bảo mật, và tích hợp phức tạp vẫn không thể bị thay thế bởi combo non-tech + AI.</p>
+<p><strong>SME và startup Việt:</strong> Hàng nghìn doanh nghiệp nhỏ đang trả tiền cho SaaS tool nước ngoài (dịch thuật, voice cloning, thiết kế). Nếu tiếp cận được GitHub open source, họ có thể tự host, tiết kiệm đáng kể chi phí vận hành — đặc biệt quan trọng trong bối cảnh VND yếu so với USD.</p>
+<p><strong>Giáo dục công nghệ:</strong> Các khóa học lập trình truyền thống cần reposition — dạy “AI-assisted development” thay vì chỉ dạy syntax. Người học cần hiểu kiến trúc và logic, không nhất thiết phải gõ từng dòng code thủ công.</p>
+<h3 id="-giải-thích-thuật-ngữ">📖 Giải thích thuật ngữ<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-giải-thích-thuật-ngữ" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>GitHub</strong>: Mạng xã hội cho lập trình viên, dùng để lưu trữ và chia sẻ code. Hình dung như Google Drive nhưng dành riêng cho dự án phần mềm.</li>
+<li><strong>Repo (Repository)</strong>: Một “thư mục dự án” trên GitHub — bên trong có code, tài liệu, hướng dẫn. Giống như hồ sơ kỹ thuật đầy đủ của một sản phẩm phần mềm.</li>
+<li><strong>Open Source</strong>: Phần mềm mà tác giả cho phép xem, dùng, chỉnh sửa code nguồn miễn phí. Ví dụ: LibreOffice là open source thay thế Microsoft Office.</li>
+<li><strong>Deploy</strong>: Đưa ứng dụng/trang web lên internet để người khác truy cập được. Giống như “xuất bản” — từ máy tính cá nhân lên server công cộng.</li>
+<li><strong>GitHub Pages</strong>: Dịch vụ miễn phí của GitHub cho phép host trang web tĩnh từ repo, với địa chỉ dạng <code>tenban.github.io</code>.</li>
+<li><strong>Static site (Trang web tĩnh)</strong>: Trang web chỉ hiển thị nội dung cố định, không có đăng nhập hay database. Nhanh, rẻ, dễ host.</li>
+<li><strong>Docker</strong>: Công cụ đóng gói phần mềm cùng toàn bộ môi trường chạy, giúp cài đặt trên bất kỳ máy nào mà không cần cấu hình phức tạp. Giống như đặt đồ ăn nấu sẵn thay vì tự nấu từ nguyên liệu.</li>
+<li><strong>Clone</strong>: Tải toàn bộ repo về máy tính cá nhân để dùng hoặc chỉnh sửa.</li>
+<li><strong>AI Agent / AI Coding Assistant</strong>: Công cụ AI có thể đọc code, giải thích, và thực hiện thay đổi theo yêu cầu ngôn ngữ tự nhiên. Ví dụ: Claude Code, Cursor, GitHub Copilot.</li>
+</ul></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Biểu Đồ</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-24" aria-expanded="true"><h3>Bảng Nội Dung</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-1" class="toc-content overflow"><li class="depth-0"><a href="#" data-for></a></li><li class="depth-0"><a href="#-phân-tích-bài-viết" data-for="-phân-tích-bài-viết">🔍 Phân tích bài viết</a></li><li class="depth-1"><a href="#-tóm-tắt-ý-chính" data-for="-tóm-tắt-ý-chính">📌 Tóm tắt ý chính</a></li><li class="depth-1"><a href="#️-mindmap" data-for="️-mindmap">🗺️ Mindmap</a></li><li class="depth-1"><a href="#-insight--góc-nhìn-đa-chiều" data-for="-insight--góc-nhìn-đa-chiều">💡 Insight &amp; Góc nhìn đa chiều</a></li><li class="depth-1"><a href="#️-phản-biện" data-for="️-phản-biện">⚖️ Phản biện</a></li><li class="depth-1"><a href="#-câu-hỏi-mở" data-for="-câu-hỏi-mở">❓ Câu hỏi mở</a></li><li class="depth-1"><a href="#-liên-hệ-việt-nam" data-for="-liên-hệ-việt-nam">🇻🇳 Liên hệ Việt Nam</a></li><li class="depth-1"><a href="#-giải-thích-thuật-ngữ" data-for="-giải-thích-thuật-ngữ">📖 Giải thích thuật ngữ</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>© 2026 Tạo và Như Ý</p><ul></ul></footer></div></div></body><script type="application/javascript">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>
