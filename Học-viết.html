@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="vi" dir="ltr"><head><title>Học viết</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Tạo và Như Ý cần đọc"/><meta property="og:title" content="Học viết"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Học viết"/><meta name="twitter:description" content="Thói quen viết lách đã cứu rỗi bộ não (và tương lai của tôi)"/><meta property="og:description" content="Thói quen viết lách đã cứu rỗi bộ não (và tương lai của tôi)"/><meta property="og:image:alt" content="Thói quen viết lách đã cứu rỗi bộ não (và tương lai của tôi)"/><meta property="og:image" content="https://duong-tao.github.io/phan-tich-bai-viet/static/og-image.png"/><meta property="og:image:url" content="https://duong-tao.github.io/phan-tich-bai-viet/static/og-image.png"/><meta name="twitter:image" content="https://duong-tao.github.io/phan-tich-bai-viet/static/og-image.png"/><meta property="og:image:type" content="image/.png"/><meta property="twitter:domain" content="duong-tao.github.io/phan-tich-bai-viet"/><meta property="og:url" content="https://duong-tao.github.io/phan-tich-bai-viet/Học-viết"/><meta property="twitter:url" content="https://duong-tao.github.io/phan-tich-bai-viet/Học-viết"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="Thói quen viết lách đã cứu rỗi bộ não (và tương lai của tôi)"/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiRzpcXFRPT0xTXFxxdWFydHpcXHF1YXJ0elxcY29tcG9uZW50c1xcc3R5bGVzIiwic291cmNlcyI6WyJtZXJtYWlkLmlubGluZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFHRjtFQUNFOzs7QUFLRjtFQUNFO0VBQ0E7OztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFOztBQUlGO0VBQ0U7RUFDQTtFQUNBIiwic291cmNlc0NvbnRlbnQiOlsiLmV4cGFuZC1idXR0b24ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsb2F0OiByaWdodDtcbiAgcGFkZGluZzogMC40cmVtO1xuICBtYXJnaW46IDAuM3JlbTtcbiAgcmlnaHQ6IDA7IC8vIE5PVEU6IHJpZ2h0IHdpbGwgYmUgc2V0IGluIG1lcm1haWQuaW5saW5lLnRzXG4gIGNvbG9yOiB2YXIoLS1ncmF5KTtcbiAgYm9yZGVyLWNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICBib3JkZXI6IDFweCBzb2xpZDtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBvcGFjaXR5OiAwO1xuICB0cmFuc2l0aW9uOiAwLjJzO1xuXG4gICYgPiBzdmcge1xuICAgIGZpbGw6IHZhcigtLWxpZ2h0KTtcbiAgICBmaWx0ZXI6IGNvbnRyYXN0KDAuMyk7XG4gIH1cblxuICAmOmhvdmVyIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgYm9yZGVyLWNvbG9yOiB2YXIoLS1zZWNvbmRhcnkpO1xuICB9XG5cbiAgJjpmb2N1cyB7XG4gICAgb3V0bGluZTogMDtcbiAgfVxufVxuXG5wcmUge1xuICAmOmhvdmVyID4gLmV4cGFuZC1idXR0b24ge1xuICAgIG9wYWNpdHk6IDE7XG4gICAgdHJhbnNpdGlvbjogMC4ycztcbiAgfVxufVxuXG4jbWVybWFpZC1jb250YWluZXIge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIGNvbnRhaW46IGxheW91dDtcbiAgei1pbmRleDogOTk5O1xuICBsZWZ0OiAwO1xuICB0b3A6IDA7XG4gIHdpZHRoOiAxMDB2dztcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgZGlzcGxheTogbm9uZTtcbiAgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDRweCk7XG4gIGJhY2tncm91bmQ6IHJnYmEoMCwgMCwgMCwgMC41KTtcblxuICAmLmFjdGl2ZSB7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB9XG5cbiAgJiA+ICNtZXJtYWlkLXNwYWNlIHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHRvcDogNTAlO1xuICAgIGxlZnQ6IDUwJTtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbiAgICBoZWlnaHQ6IDgwdmg7XG4gICAgd2lkdGg6IDgwdnc7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcblxuICAgICYgPiAubWVybWFpZC1jb250ZW50IHtcbiAgICAgIHBhZGRpbmc6IDJyZW07XG4gICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICB0cmFuc2Zvcm0tb3JpZ2luOiAwIDA7XG4gICAgICB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMC4xcyBlYXNlO1xuICAgICAgb3ZlcmZsb3c6IHZpc2libGU7XG4gICAgICBtaW4taGVpZ2h0OiAyMDBweDtcbiAgICAgIG1pbi13aWR0aDogMjAwcHg7XG5cbiAgICAgIHByZSB7XG4gICAgICAgIG1hcmdpbjogMDtcbiAgICAgICAgYm9yZGVyOiBub25lO1xuICAgICAgfVxuXG4gICAgICBzdmcge1xuICAgICAgICBtYXgtd2lkdGg6IG5vbmU7XG4gICAgICAgIGhlaWdodDogYXV0bztcbiAgICAgIH1cbiAgICB9XG5cbiAgICAmID4gLm1lcm1haWQtY29udHJvbHMge1xuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgYm90dG9tOiAyMHB4O1xuICAgICAgcmlnaHQ6IDIwcHg7XG4gICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgZ2FwOiA4cHg7XG4gICAgICBwYWRkaW5nOiA4cHg7XG4gICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgYm9yZGVyLXJhZGl1czogNnB4O1xuICAgICAgYm94LXNoYWRvdzogMCAycHggNHB4IHJnYmEoMCwgMCwgMCwgMC4xKTtcbiAgICAgIHotaW5kZXg6IDI7XG5cbiAgICAgIC5tZXJtYWlkLWNvbnRyb2wtYnV0dG9uIHtcbiAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgIHdpZHRoOiAzMnB4O1xuICAgICAgICBoZWlnaHQ6IDMycHg7XG4gICAgICAgIHBhZGRpbmc6IDA7XG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgICAgY29sb3I6IHZhcigtLWRhcmspO1xuICAgICAgICBib3JkZXItcmFkaXVzOiA0cHg7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgZm9udC1zaXplOiAxNnB4O1xuICAgICAgICBmb250LWZhbWlseTogdmFyKC0tYm9keUZvbnQpO1xuICAgICAgICB0cmFuc2l0aW9uOiBhbGwgMC4ycyBlYXNlO1xuXG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIH1cblxuICAgICAgICAmOmFjdGl2ZSB7XG4gICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDFweCk7XG4gICAgICAgIH1cblxuICAgICAgICAvLyBTdHlsZSB0aGUgcmVzZXQgYnV0dG9uIGRpZmZlcmVudGx5XG4gICAgICAgICY6bnRoLWNoaWxkKDIpIHtcbiAgICAgICAgICB3aWR0aDogYXV0bztcbiAgICAgICAgICBwYWRkaW5nOiAwIDEycHg7XG4gICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG4iXX0= */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://duong-tao.github.io/phan-tich-bai-viet/index.xml"/></head><body data-slug="Học-viết"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">Tạo và Như Ý cần đọc</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Tìm Kiếm</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Tìm kiếm thông tin" placeholder="Tìm kiếm thông tin"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Tối"><title>Tối</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Sáng"><title>Sáng</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Chế độ đọc"><title>Chế độ đọc</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="false" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-39"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Danh mục bài viết</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-39" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Học viết</a></div></nav><h1 class="article-title">Học viết</h1><p show-comma="true" class="content-meta"><time datetime="2026-07-16T17:00:00.000Z">17 thg 7, 2026</time><span>đọc 26 phút</span></p><ul class="tags"><li><a href="./tags/clippings" class="internal tag-link">clippings</a></li><li><a href="./tags/analyzed" class="internal tag-link">analyzed</a></li></ul><div class="text-size" role="group" aria-label="Chọn cỡ chữ"><button data-size="small" title="Chữ nhỏ" aria-label="Chữ nhỏ"><span class="a-small">A</span><span class="lbl">Nhỏ</span></button><button data-size="medium" title="Chữ vừa" aria-label="Chữ vừa"><span class="a-medium">A</span><span class="lbl">Vừa</span></button><button data-size="large" title="Chữ lớn" aria-label="Chữ lớn"><span class="a-large">A</span><span class="lbl">Lớn</span></button></div></div></div><article class="popover-hint"><p><img src="./Học-viết.png" width="auto" height="auto" alt/></p>
+<p>Thói quen viết lách đã cứu rỗi bộ não (và tương lai của tôi)<br/>
+Bài viết của Dan Koe, top 1 writer on X.</p>
+<p>“Nếu chưa biết nên học gì, hãy bắt đầu viết.</p>
+<p>Kể cả khi bạn không muốn trở thành “người viết”.</p>
+<p>Viết dạy bạn cách tư duy, cách học nhanh bất kỳ kỹ năng nào, và cách thu hút một audience sẵn sàng ủng hộ công việc của bạn — thứ tuyệt đối cần thiết nếu bạn muốn xây business riêng, hoặc đơn giản muốn theo đuổi bất kỳ công việc sáng tạo, có ý nghĩa nào một cách độc lập.</p>
+<p>Trong kỷ nguyên AI, tư duy, học tập và distribution (đưa giá trị của bạn đến trước mặt người khác để bạn thực sự có cơ hội được trả tiền) vốn thuộc nhóm kỹ năng không bao giờ lỗi thời. Viết cho phép bạn rèn cả ba cùng lúc, đồng thời tích lũy digital leverage (đòn bẩy kĩ thuật số) như một sản phẩm phụ.</p>
+<p>Tôi chưa từng nghĩ mình sẽ trở thành người viết.</p>
+<p>Nhìn tôi cũng chẳng giống người viết chút nào — một gã cơ bắp to xác, đầu óc đơn giản, trót phải lòng những ý tưởng sâu.</p>
+<p>Xét trên mọi phương diện, viết — chỉ như một thói quen buổi sáng đơn giản — đã thay đổi hoàn toàn quỹ đạo tâm trí và cuộc đời tôi. Nó giúp tôi diễn đạt rõ suy nghĩ, giữ tâm trí bình lặng, tìm thấy cơ hội bên ngoài thị trường việc làm truyền thống, và chính nó nuôi toàn bộ thành công trong công việc lẫn business của tôi.</p>
+<p>Trong lá thư này, tôi muốn cho bạn xem hệ thống tôi dùng để bắt ý tưởng và viết ra content đáng đọc, nhưng tôi cũng muốn chỉ ra vì sao con đường này khả thi hơn bao giờ hết — và vì sao nó sẽ biến đổi cách bộ não bạn tương tác với thực tại.</p>
+<p>Đúng vậy, chuyện sâu đến mức đó.</p>
+<p>Bắt đầu nhé.</p>
+<h2 id="leverage-đòn-bẩy-cũ-vs-leverage-mới-bí-mật-của-thành-công-thời-hiện-đại">Leverage (đòn bẩy) cũ vs. leverage mới: bí mật của thành công thời hiện đại<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#leverage-đòn-bẩy-cũ-vs-leverage-mới-bí-mật-của-thành-công-thời-hiện-đại" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<blockquote>
+<p>Leverage lớn nhất không còn là vốn. Leverage lớn nhất là enterprise — năng lực vận hành một business xuất sắc. Và đặc biệt, leverage lớn nhất chính là personal brand. Sở hữu một audience lớn. Khoảnh khắc có người dành sự chú ý cho bạn, bạn đã nắm trong tay một dạng leverage khổng lồ.<br/>
+— Daniel Priestley</p>
+</blockquote>
+<p>Luật chơi của việc tạo ra của cải đã thay đổi tận gốc.</p>
+<p>Những tài sản từng tạo ra thu nhập trong Kỷ nguyên Công nghiệp — bất động sản, nhà máy, máy móc, hàng hóa vật chất — đang bị thay thế bởi tài sản số: audience, personal brand, IP, content, dữ liệu, phần mềm. Loại tài sản mới này rẻ đến kinh ngạc khi xây dựng, dễ scale hơn, khó bị đánh thuế hơn, và tự sinh lãi kép ngay cả lúc bạn ngủ.</p>
+<p>Điều kiện duy nhất để tự xây leverage trong thế giới hôm nay: một ý tưởng tốt và đủ tự tin để đăng nó lên internet.</p>
+<p>Vấn đề — đồng thời cũng chính là cơ hội — nằm ở chỗ phần lớn mọi người vẫn bị điều kiện hóa bởi hệ giá trị công nghiệp. Bằng cách nào đó, họ vẫn tin con đường trường học → công việc → nghỉ hưu chắc chắn nhất, an toàn nhất, bảo đảm nhất, trong khi sự thật cách xa điều đó cả một quãng dài.</p>
+<p>Điều tương tự đúng với việc xây leverage — và qua đó tạo dựng của cải — cho tương lai của bạn.</p>
+<p><strong>Leverage cũ đến từ tài sản vật chất, hữu hình.</strong></p>
+<p>Một căn nhà, một nhà máy, chiếc Rolex, đội xe tải, kho hàng tồn, vàng. Bạn mua chúng, rồi để chúng tăng giá hoặc sinh thu nhập.</p>
+<p>Leverage cũ tuyến tính và cục bộ.</p>
+<p>Một nhà máy mỗi ngày chỉ sản xuất được chừng ấy đơn vị, một căn nhà mỗi lần chỉ cho một người thuê.</p>
+<p>Đừng hiểu lầm ý tôi: leverage nào cũng đáng giá, và leverage cũ vẫn rất tốt. Có điều, tài sản vật chất sẽ trở thành thứ đầu tiên chính phủ tìm ra, đánh thuế và tịch thu nếu tiền lương sụp đổ — kịch bản hôm nay dễ xảy ra hơn hôm qua, bởi AI có thể khiến điều đó diễn ra rất nhanh, đẩy các chính phủ vào thế phải mở rộng lưới an sinh xã hội.</p>
+<p>Chính phủ khó lòng tịch thu một danh sách email gồm những người biết bạn, một thư viện content, hay một cuốn sách bán chạy.</p>
+<p><strong>Leverage mới đến từ tài sản vô hình, tài sản số.</strong></p>
+<p>Audience, personal brand, IP, dữ liệu, hệ thống, phần mềm. Đây chính là leverage của lớp người giàu mới: media, data và code. Content viết một lần có thể được hàng triệu người xem. Phần mềm tạo một lần có thể phục vụ hàng triệu người dùng.</p>
+<p>Với hầu hết mọi người, viết chính là dạng leverage dễ tiếp cận và thực tế nhất. Bạn có thể học code, nhưng nếu không kéo được người khác quan tâm đến sản phẩm mình xây, sẽ chẳng ai dùng hay trả tiền cho nó. Viết là dạng leverage mở khóa mọi dạng leverage còn lại.</p>
+<p>Bạn sẽ không thấy tài sản số trên bảng cân đối kế toán, nhưng chúng chiếm tới 90% giá trị của S&amp;P 500.</p>
+<p>Kim Kardashian, Taylor Swift, Ryan Reynolds, Mr. Beast, Elon Musk — tất cả đều sở hữu audience khổng lồ và personal brand cực mạnh.</p>
+<p>Nhưng có lẽ bạn chẳng muốn chạm đến mức nổi tiếng đó, và đây lại là tin tốt, bởi bạn không cần hàng triệu follower để mô hình này vận hành. Chỉ với 6–12 tháng nỗ lực tập trung, bạn có thể thấy mình đứng trong một cuộc đời khác hẳn hiện tại.</p>
+<p>Riêng tôi đã thay thế được thu nhập cũ ở mốc khoảng 5.000 follower (chừng 6 tháng sau khi bắt đầu), bởi tôi thực sự nghiêm túc với việc này. Randy, bạn tôi, một fitness coach, kiếm 100.000 USD mỗi tháng ở mốc khoảng 10.000 follower — anh ấy đầu tư vào việc học, nghiên cứu marketing và sales, rồi thực thi mọi thứ như thể mạng sống phụ thuộc vào đó.</p>
+<p>Điểm mấu chốt: người ta ước lượng quá cao mức cần thiết để thắng, bởi thứ duy nhất họ nhìn thấy trên timeline chỉ toàn những celebrity xa rời thực tế.</p>
+<p>Đó là lý do trong bootcamp của mình, chúng tôi dạy cách tìm ra điều bạn muốn nói, dựng “personal monopoly” của riêng bạn, và viết content tạo tác động mạnh. Bạn vẫn còn kịp tham gia buổi live call sắp tới của chúng tôi.</p>
+<p>Nhưng lợi ích của viết vươn xa hơn thế nhiều.</p>
+<h2 id="viết-thay-đổi-tận-gốc-bộ-não--cuộc-đời-bạn-như-thế-nào">Viết thay đổi tận gốc bộ não &amp; cuộc đời bạn như thế nào<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#viết-thay-đổi-tận-gốc-bộ-não--cuộc-đời-bạn-như-thế-nào" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<blockquote>
+<p>Làm sao tôi biết mình nghĩ gì, trước khi nhìn thấy điều mình nói ra?<br/>
+— E.M. Forster</p>
+</blockquote>
+<p>Thật khó giải thích… nhưng hành động viết sâu hơn nhiều so với chuyện đặt bút lên giấy.</p>
+<p>Nó dịch chuyển tâm trí bạn sang một cách nhìn thế giới giàu ý nghĩa hơn: các cuộc trò chuyện trở thành nguồn cảm hứng, đầu bạn đầy ắp những ý tưởng đang vật lộn để hiểu, và bạn nhận ra nhiều chi tiết của đời sống hơn, thay vì sống trên cái bề mặt đầy căng thẳng của nó.</p>
+<p>Trong mắt tôi, viết mang lại 4 lợi ích cốt lõi:</p>
+<h3 id="1-viết-tái-lập-trình-cách-bạn-tư-duy">1) Viết tái lập trình cách bạn tư duy<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1-viết-tái-lập-trình-cách-bạn-tư-duy" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Cơ chế cốt lõi ở đây là forced linearity — tính tuyến tính cưỡng bức.</p>
+<p>Đây chỉ là cách nói hoa mỹ cho một điều đơn giản: trong đầu, bạn có thể cảm thấy mình hiểu một thứ, nhưng viết buộc bạn nén thứ đó thành một dòng chảy duy nhất.</p>
+<p>Suy nghĩ khi chưa viết ra giống như đi bộ giữa rừng, nơi bạn nhìn được mọi hướng cùng lúc; còn viết giống như lái xe trên một con đường xuyên qua đúng mớ hỗn độn ấy. Bạn phải quyết định mình đi đâu, rẽ ở ngã nào, có muốn chọn cung đường ngắm cảnh không, và tìm lối quay về ra sao nếu lạc.</p>
+<p>Nói cách khác, viết chính là bộ máy của tư duy — phòng gym nơi tâm trí bạn được rèn nên.</p>
+<p>Bạn có thể nghĩ mình hiểu rõ những cảm xúc, phản đề, ký ức, hay những phép loại suy nửa vời trong đầu, thậm chí cả hệ giá trị và niềm tin của chính mình — nhưng nếu chưa từng viết chúng ra, tôi gần như dám chắc rằng bạn chưa hiểu.</p>
+<h3 id="2-viết-nâng-cao-khả-năng-nhận-diện-pattern">2) Viết nâng cao khả năng nhận diện pattern<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2-viết-nâng-cao-khả-năng-nhận-diện-pattern" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Điều này có vài tầng.</p>
+<p>Tầng thứ nhất: viết đều đặn giúp bạn dựng một bản ghi bên ngoài cho tư duy của mình. Bạn có thể nhanh chóng tra lại những gì đã viết trong quá khứ để diễn đạt suy nghĩ hiện tại tốt hơn — nó giúp bạn tư duy sáng rõ.</p>
+<p>Tầng thứ hai tương tự “con mắt của nhiếp ảnh gia”: sau vài năm thực hành nghiêm túc, bạn bắt đầu nhìn thấy khung hình và bố cục ngay trong đời sống thường nhật. Thế giới không còn trông như cũ — nó có thêm một tầng chiều sâu.</p>
+<p>Với viết, bạn bắt đầu nhận ra cấu trúc trong một lập luận, một ẩn dụ trong khoảnh khắc tầm thường, hay narrative arc của một ngày bình thường. Viết huấn luyện một kiểu chú ý đặc thù, thứ sẽ thấm sang mọi lĩnh vực khác.</p>
+<p>Tầng thứ ba: bạn bắt được những ý tưởng bình thường mình sẽ bỏ lỡ.</p>
+<p>Khi tôi đã lên kế hoạch cho newsletter tuần này, hoặc đơn giản biết hôm nay cần viết một tweet, tâm trí tôi sẽ tự động giúp tôi nhận ra những ý tưởng phục vụ cho mục tiêu đó.</p>
+<p>Đây chính là khái niệm psycho-cybernetics: tâm trí bạn vận hành như một tên lửa tầm nhiệt hướng về mục tiêu của nó, và sẽ giúp bạn nhận ra những công cụ cần thiết để đạt được chúng. (Vấn đề nằm ở chỗ đa số người ta không thực sự có mục tiêu ý thức nào để bận tâm — họ chỉ mang những mục tiêu vô thức được gán sẵn, và bởi lộ trình đã được hoạch định hộ, họ chẳng phải làm gì nhiều ngoài việc có mặt ở trường và ở chỗ làm, nên họ đánh mất trọn tầng này của đời sống.)</p>
+<h3 id="3-viết-giúp-bạn-diễn-đạt-rõ-suy-nghĩ">3) Viết giúp bạn diễn đạt rõ suy nghĩ<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3-viết-giúp-bạn-diễn-đạt-rõ-suy-nghĩ" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Phần lớn mọi người sống với niềm tin rằng mình hiểu những điều thực ra mình không hiểu.</p>
+<p>Nguyên nhân nằm ở chỗ họ chưa bao giờ bị buộc phải đưa suy nghĩ ra ngoài và nhìn thẳng vào nó, chứ không phải vì họ kém cỏi. Viết vừa là công cụ cải thiện giao tiếp — và qua đó cải thiện hầu hết các mảng khác của đời sống — vừa là công cụ phơi bày việc bạn có thực sự biết mình đang nói gì hay không.</p>
+<p>Đó chính là điều khiến phần đông sợ hãi.</p>
+<p>Họ không muốn nếm trải cảm giác vật lộn vốn đi kèm với mọi việc có ý nghĩa. Họ muốn mọi thứ dễ dàng. Họ muốn ý tưởng cứ thế tự hiện ra trong đầu ngay lập tức. Họ xem viết như một thứ ai cũng biết làm, nên không nhận ra rằng viết vốn là một kỹ năng như bao kỹ năng khác, và cần nỗ lực để tiến bộ.</p>
+<p>Điều này dẫn thẳng đến điểm quan trọng nhất.</p>
+<h3 id="4-viết-giúp-bạn-học-nhanh-hơn">4) Viết giúp bạn học nhanh hơn<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#4-viết-giúp-bạn-học-nhanh-hơn" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Tương lai thuộc về những người học nhanh nhất.</p>
+<p>Đáng tiếc, phần lớn mọi người ngừng học ngay sau khi tốt nghiệp phổ thông — và điều đó lộ rõ.</p>
+<p>Muốn đạt một mục tiêu, bạn buộc phải học; muốn đạt bất kỳ mục tiêu nào nằm ngoài ba thứ xã hội đã cấy vào đầu bạn từ lúc chào đời, bạn buộc phải tự giáo dục; và muốn tăng tốc quá trình ấy, bạn buộc phải viết.</p>
+<p>Viết vừa là một hình thức giảng dạy, vừa là một hình thức thấu hiểu.</p>
+<p>Khoa học học tập có khái niệm “protégé effect”: học sinh dạy lại tài liệu ghi nhớ tốt hơn học sinh chỉ ôn nó. Tải nhận thức cần thiết để tìm ra cách giải thích một điều cho người khác buộc não xử lý sâu hơn, tổ chức tốt hơn, và nhận diện được các lỗ hổng trong hiểu biết.</p>
+<p>Tôi học được trong 6 tháng đầu viết online nhiều hơn cả những năm ngồi ghế nhà trường. Tôi đang phóng đại, nhưng ý tôi muốn nói: tôi học được nhiều hơn hẳn về những điều mình quan tâm. Tôi cảm nhận được tâm trí mình đang đổi hình dạng, và mình đang tiến gần hơn đến hình mẫu những nhà tư tưởng tôi ngưỡng mộ thuở lớn lên. Phiên bản trẻ hơn của tôi từng nghĩ não mình quá kém để nói được điều gì thông minh. Hóa ra, tôi chỉ chưa luyện tập.</p>
+<p>Cuối cùng, viết đòi hỏi bạn phải hiểu.</p>
+<p>Bạn đọc một thứ gì đó.</p>
+<p>Bạn cảm thấy mình đã nắm được nó.</p>
+<p>Bạn thử viết về nó.</p>
+<p>Bạn nhận ra mình không viết nổi.</p>
+<p>Phần lớn mọi người nghĩ nguyên nhân nằm ở việc họ không đủ “tư cách” để viết về chủ đề đó — một suy nghĩ nhảm nhí. Bạn hoàn toàn có thể viết về một ý tưởng, y như bất kỳ ai khác trên hành tinh này. Bạn chỉ đang tự dựng lên những người gác cổng vô hình, xuất phát từ nỗi sợ đặt ý tưởng của mình trước mặt người khác.</p>
+<p>Nhưng giờ đây bạn biết chính xác hiểu biết của mình đứt gãy ở đâu.</p>
+<p>Đó là lúc bạn quay lại và học. Bạn nghiên cứu. Rồi bạn tiếp tục viết.</p>
+<h2 id="hệ-thống-viết-tôi-dùng-để-tạo-ra-những-ý-tưởng-người-ta-không-thể-không-đọc">Hệ thống viết tôi dùng để tạo ra những ý tưởng người ta không thể không đọc<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#hệ-thống-viết-tôi-dùng-để-tạo-ra-những-ý-tưởng-người-ta-không-thể-không-đọc" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Tôi chưa bao giờ thuộc dạng ngăn nắp nhất.</p>
+<p>Tôi từng thử các app second brain. Tôi từng thử làm mọi thứ bên trong AI.</p>
+<p>Nhưng rốt cuộc tôi vẫn quay về thói quen ghi vội ý tưởng vào một note dài chạy xuyên suốt. Tất nhiên ý tưởng thất lạc thường xuyên, song tôi không xem đó như một vấn đề: thứ gì bạn phải cố ghi để nhớ, thứ đó không quan trọng; còn thứ gì quan trọng, tự khắc bạn sẽ nhớ.</p>
+<p>Tôi nhận ra rằng một bài viết (hay content) thực sự tạo được traction — thay vì biến mất vào cái hố đen nơi chẳng ai đoái hoài đến công sức của bạn — quy về vài yếu tố:</p>
+<ul>
+<li>Bạn cần MỘT chủ đề hoặc theme duy nhất cho cả tuần</li>
+<li>Bạn cần một nơi để ghi nhanh ý tưởng</li>
+<li>Bạn cần một cách để lưu giữ cảm hứng (bài đăng mạng xã hội, video YouTube, bài viết Substack, v.v.)</li>
+<li>Bạn cần hiểu cách đóng gói hook hoặc tiêu đề sao cho người ta thực sự muốn đọc</li>
+<li>Bạn cần rút được ý tưởng, cảm hứng và tư liệu nghiên cứu ra dùng hiệu quả ngay trong lúc viết hoặc sáng tạo</li>
+</ul>
+<p>Dưới đây là hình hài của tất cả những điều đó khi ghép thành một hệ thống.</p>
+<p>Trông có vẻ phức tạp, nhưng cuối bài chúng ta sẽ tóm gọn lại thật đơn giản.</p>
+<h3 id="1-chọn-viết-về-điều-gì">1) Chọn viết về điều gì<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1-chọn-viết-về-điều-gì" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Tôi không bận tâm chuyện niche down.</p>
+<p>Bạn đâu phải loài vật sẽ chết khi bị đặt vào một niche hay môi trường khác, kiểu sư tử giữa Alaska.</p>
+<p>Bạn là con người — sinh thể biết học, biết dựng, biết thích nghi để sống tốt trong bất kỳ niche nào.</p>
+<p>Khi chọn chủ đề, tôi vận hành theo hai nguyên tắc:</p>
+<ol>
+<li>
+<p><strong>Nó có phải điều tôi thấy quan trọng hoặc đáng chia sẻ không?</strong> Bởi chỉ cần lọc một ý tưởng qua góc nhìn của riêng tôi và không tự dằn vặt đến chết vì overthinking, ý tưởng đó đã trở nên độc nhất. Tôi mang một căn tính cụ thể, và dù cố đến đâu, có lẽ tôi cũng chẳng nói chuyện nổi với các “soccer mom” tuổi 40. Chỉ cần nói về điều mình thấy đáng chia sẻ, tôi sẽ hút đúng những người mình có thể tạo tác động nhiều nhất.</p>
+</li>
+<li>
+<p><strong>Nó đã được đóng gói hoặc định khung theo cách giành được sự chú ý chưa?</strong> Bởi làm người viết nghĩa là làm đúng việc đó: bạn giành lấy sự chú ý, bằng không bài viết của bạn không được đọc. Cách làm điều này trong thế giới hôm nay: nghiên cứu những gì đang hiệu quả trên mạng xã hội, rồi áp cấu trúc và nguyên tắc của chúng vào hook, tiêu đề của bạn.</p>
+</li>
+</ol>
+<p>Tăng trưởng trên mạng xã hội, gói gọn, chính là như vậy.</p>
+<p>Nhiều người muốn cảm thấy mình là một cây viết siêu sáng tạo, muốn mình phải thật “authentic”, nên họ từ chối đóng gói ý tưởng theo cách thị trường thực sự cần — và công việc của họ không bao giờ có traction. Nói cách khác, họ không bao giờ được trả tiền, bởi việc đó khiến họ thấy “bẩn tay”, nên họ tiếp tục cày trên giấc mơ của người khác để sếp họ được trả tiền. Họ khao khát tạo tác động lên người khác đến tuyệt vọng, nhưng lại từ chối làm đúng cái việc duy nhất cho phép điều đó xảy ra. Họ nhìn nó như hành động hy sinh một phần căn tính, thay vì như việc thu nạp một kỹ năng làm tăng độ hữu dụng của chính mình.</p>
+<p>Cách đơn giản nhất để làm điều này như sau:</p>
+<p>Trước khi viết, hãy nghiên cứu những gì đang hiệu quả trên mạng xã hội.</p>
+<p>Bởi chúng cho bạn thấy thị trường vốn đã dành sự chú ý cho điều gì.</p>
+<p>Bạn có thể làm việc này đơn thuần bằng cách lướt mạng xã hội và lưu lại những bài đang chạy tốt, hoặc dùng một công cụ nghiên cứu chuyên kéo mọi bài top-performing về một chỗ.</p>
+<p>Lấy ví dụ: lá thư này mang tiêu đề “Hệ thống viết đã cứu bộ não tôi (và cả tương lai tôi)“.</p>
+<p>Trước đó, tôi từng thấy một bài trong Discover feed của Eden và lưu nó vào một board của mình — bài đó tên “The Notebook System That Saved My Brain” (Hệ thống sổ tay đã cứu bộ não tôi).</p>
+<p>Nói cách khác, tôi nhìn thấy thứ người ta đã phát tín hiệu rằng họ muốn, lấy chủ đề mình muốn viết, rồi ghép hai thứ vào nhau. Đây là lúc bạn dùng một công cụ thư viện nghiên cứu / cảm hứng như Eden, hoặc tự lướt mạng xã hội tìm những bài hiệu suất cao.</p>
+<h3 id="2-tạo-một-project-duy-nhất-cho-cả-tuần">2) Tạo một project duy nhất cho cả tuần<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2-tạo-một-project-duy-nhất-cho-cả-tuần" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Mỗi tuần tôi đăng một newsletter trên Substack.</p>
+<p>Bài long-form đó được đăng lại lên X articles, chuyển thành một script YouTube dạng mềm, và video YouTube được đưa lên mọi nền tảng podcast.</p>
+<p>Tôi từng thử hai bài mỗi tuần, nhưng bộ não tôi vận hành tốt hơn khi có thời gian suy nghĩ và gom cảm hứng quanh một chủ đề duy nhất.</p>
+<p>Cả tuần của tôi xoay quanh chủ đề ấy. Đọc sách, những ý khớp với chủ đề tự bật ra; nghe một video trên YouTube, điều tương tự xảy ra — ý tưởng cứ thế tìm về đúng chủ đề.</p>
+<p>Những ý tưởng đó trở thành tư liệu cho chủ đề tôi đang viết, còn newsletter trở thành nguồn cho các bài đăng mạng xã hội trên mọi nền tảng.</p>
+<p>Nói cách khác, tôi viết một bài mỗi tuần, và nó trở thành content cho tất cả các nền tảng. Cách làm này cải thiện tư duy của tôi rõ rệt, bởi nó không còn bị phân mảnh liên tục.</p>
+<p>Đó là toàn bộ hệ thống bắt ý tưởng và làm content của tôi.</p>
+<p>Vậy cụ thể bạn cần làm gì ở đây?</p>
+<p>Mỗi tuần, tạo một nơi duy nhất để lưu ý tưởng vào.</p>
+<p>Tôi tạo một board trong Eden (công cụ tôi nhắc đến nhiều vì nó là app duy nhất gom được toàn bộ những việc này về một chỗ): đó là nơi tôi ghi vội ý tưởng, dán link mạng xã hội, thêm bài viết và video, thậm chí upload sách dưới dạng PDF để nhờ AI rút ý ra hộ — khỏi phải tự lục tìm, khỏi cả phải bận tâm chuyện highlight.</p>
+<p>Ngay lúc này, tôi đang viết những dòng này bên trong chính board đó.</p>
+<p>Khi mọi ý tưởng và cảm hứng nằm gọn một chỗ, tôi dễ dàng mở nó bên cạnh trong lúc viết, hoặc tạo một đoạn chat rồi kết nối một bài đăng, một file PDF hay một đường link vào để rút ý ra.</p>
+<p>Nếu bắt gặp ý tưởng lúc rời máy tính, tôi chỉ cần lưu vào board trên mobile — chẳng hạn một video YouTube vừa xem — rồi sau đó chat với nó để lấy ra đúng cái ý mình cần.</p>
+<p>Lưu ý: tôi duy trì thêm vài board tên “Favorite Ideas”, “Validated Ideas” và “Personal Ideas”.</p>
+<p>Bài tôi yêu thích đi vào favorite ideas.</p>
+<p>Bài đã viral đi vào validated ideas.</p>
+<p>Ghi chú và suy nghĩ cá nhân đi vào personal ideas.</p>
+<p>Trộn cả ba lại, bạn có một bài viết hay (đúng vậy — những cây viết bạn ngưỡng mộ đều nghiên cứu, đều lưu cảm hứng như thể mạng sống phụ thuộc vào đó, rồi nhào tất cả lại thành bài của họ).</p>
+<p>Tôi có thể chat với bất kỳ board nào trong số đó để lấy các biến thể headline, các góc tiếp cận, hay ý tưởng bài đăng, rồi thả thẳng vào scheduler.</p>
+<h3 id="3-lên-dàn-ý-viết-và-tái-sử-dụng">3) Lên dàn ý, viết, và tái sử dụng<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3-lên-dàn-ý-viết-và-tái-sử-dụng" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Tôi sẽ không đi vào quy trình viết cụ thể ở đây — riêng phần đó đủ choán trọn một bootcamp.</p>
+<p>Dù vậy, có người đã mổ xẻ những newsletter hay nhất của tôi và biến chúng thành một prompt giúp bạn tự dựng dàn ý theo lối cuốn hút: nó sẽ hỏi bạn muốn viết gì, rồi giúp bạn gom các ý tưởng có thể đưa vào dàn ý.</p>
+<p>Như đã nói, đây là những gì tôi làm:</p>
+<ul>
+<li>Tôi tạo một board hoặc một nơi để lưu bài đăng, ý tưởng và video (đây chính là phần nghiên cứu trong việc viết của tôi)</li>
+<li>Tôi tạo một tài liệu dàn ý để bắt đầu sắp xếp các ý</li>
+<li>Tôi mở toàn bộ những thứ đó bên cạnh trong lúc viết</li>
+<li>Tôi đăng bài dưới dạng Substack và X article</li>
+<li>Tôi chặn riêng một giờ, một ngày mỗi tuần, để quay bài đó thành video YouTube</li>
+<li>Video YouTube đó được đưa lên mọi nền tảng podcast</li>
+<li>Tôi dùng bài viết để tạo ý tưởng bài đăng suốt cả tuần</li>
+<li>Tôi quảng bá Substack của mình vài lần mỗi tuần bên dưới các content khác để nó tăng trưởng</li>
+</ul>
+<p>Toàn bộ hệ thống chỉ có vậy.</p>
+<p>Đi bộ, đọc, và chừng 60 phút viết mỗi ngày — chừng đó tạo thành nền móng cho những kỹ năng khó lỗi thời nhất: học, nghĩ, và kiếm tiền (một cách độc lập).</p>
+<p>Tôi dừng ở đây, và sẵn lòng khai triển thêm trong những bài sau.</p>
+<hr/>
+<h2 id="-phân-tích-bài-viết">🔍 Phân tích bài viết<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-phân-tích-bài-viết" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<blockquote class="callout abstract" data-callout="abstract">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>📌 Tóm tắt ý chính </p></div>
+                  
+                </div>
+<div class="callout-content">
+<ul>
+<li><strong>Digital leverage</strong> (audience, personal brand, content, phần mềm) đang thay thế physical leverage (bất động sản, máy móc) — và viết là con đường tiếp cận dễ nhất, rẻ nhất</li>
+<li>Viết rèn não theo 4 cơ chế: forced linearity (tư duy tuyến tính), pattern recognition, diễn đạt rõ ràng, và protégé effect (dạy = học sâu hơn)</li>
+<li>Hệ thống Dan Koe: 1 chủ đề/tuần → nghiên cứu những gì đang viral + ghép góc nhìn cá nhân → repurpose sang mọi nền tảng</li>
+<li>Không cần triệu follower — ở mức 5.000–10.000 người đúng tệp là đủ để thay thế thu nhập</li>
+<li>Viết là “meta-skill” mở khóa mọi kỹ năng còn lại: tư duy rõ → giao tiếp tốt → học nhanh → xây leverage</li>
+</ul>
+</div>
+</blockquote>
+<h3 id="️-mindmap">🗺️ Mindmap<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#️-mindmap" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure class="canvas-mindmap"><div class="cv-toolbar"><button type="button" class="cv-btn cv-zoom-out" title="Thu nhỏ" aria-label="Thu nhỏ">−</button><button type="button" class="cv-btn cv-reset" title="Về vị trí gốc" aria-label="Về vị trí gốc">⟲</button><button type="button" class="cv-btn cv-zoom-in" title="Phóng to" aria-label="Phóng to">+</button><button type="button" class="cv-btn cv-fullscreen-toggle" title="Toàn màn hình" aria-label="Toàn màn hình">⛶</button></div><div class="cv-canvas-wrap"><svg viewBox="-1028 -688 2196 1336" xmlns="http://www.w3.org/2000/svg" width="100%" style="height:auto;display:block;touch-action:none;"><defs><marker id="cv-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7d8896"></path></marker></defs><g class="cv-zoom-layer"><path d="M -100 0 C -100 -95, -220 -95, -220 -190" fill="none" stroke="#7d8896" stroke-width="2.5" marker-end="url(#cv-arrow)" opacity="0.65"></path><path d="M -540 -190 C -540 -245, -660 -245, -660 -300" fill="none" stroke="#7d8896" stroke-width="2.5" marker-end="url(#cv-arrow)" opacity="0.65"></path><path d="M -540 -190 C -540 -85, -660 -85, -660 20" fill="none" stroke="#7d8896" stroke-width="2.5" marker-end="url(#cv-arrow)" opacity="0.65"></path><path d="M 140 0 C 140 -100, 320 -100, 320 -200" fill="none" stroke="#7d8896" stroke-width="2.5" marker-end="url(#cv-arrow)" opacity="0.65"></path><path d="M 610 -200 C 610 -385, 760 -385, 760 -570" fill="none" stroke="#7d8896" stroke-width="2.5" marker-end="url(#cv-arrow)" opacity="0.65"></path><path d="M 610 -200 C 610 -285, 760 -285, 760 -370" fill="none" stroke="#7d8896" stroke-width="2.5" marker-end="url(#cv-arrow)" opacity="0.65"></path><path d="M 610 -200 C 610 -190, 760 -190, 760 -180" fill="none" stroke="#7d8896" stroke-width="2.5" marker-end="url(#cv-arrow)" opacity="0.65"></path><path d="M 610 -200 C 610 -110, 760 -110, 760 -20" fill="none" stroke="#7d8896" stroke-width="2.5" marker-end="url(#cv-arrow)" opacity="0.65"></path><path d="M 140 0 C 140 137.5, 320 137.5, 320 275" fill="none" stroke="#7d8896" stroke-width="2.5" marker-end="url(#cv-arrow)" opacity="0.65"></path><path d="M 600 275 C 600 231.25, 760 231.25, 760 187.5" fill="none" stroke="#7d8896" stroke-width="2.5" marker-end="url(#cv-arrow)" opacity="0.65"></path><path d="M 600 275 C 600 325, 760 325, 760 375" fill="none" stroke="#7d8896" stroke-width="2.5" marker-end="url(#cv-arrow)" opacity="0.65"></path><path d="M 600 275 C 600 407.5, 760 407.5, 760 540" fill="none" stroke="#7d8896" stroke-width="2.5" marker-end="url(#cv-arrow)" opacity="0.65"></path><path d="M -100 0 C -100 75, -220 75, -220 150" fill="none" stroke="#7d8896" stroke-width="2.5" marker-end="url(#cv-arrow)" opacity="0.65"></path><g><rect x="-100" y="-60" width="240" height="120" rx="14" fill="#161b22" stroke="#f0716e" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="20" y="-9" font-size="18" font-weight="700" fill="#f0716e">Học Viết</tspan><tspan x="20" y="18" font-size="15" font-weight="400" fill="#e6edf3">**Dan Koe**</tspan></text></g><g><rect x="320" y="-280" width="290" height="160" rx="14" fill="#161b22" stroke="#6fbf73" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="465" y="-209" font-size="18" font-weight="700" fill="#6fbf73">Viết → Não thay đổi</tspan><tspan x="465" y="-182" font-size="15" font-weight="400" fill="#e6edf3">*4 lợi ích cốt lõi*</tspan></text></g><g><rect x="760" y="-240" width="360" height="120" rx="14" fill="#161b22" stroke="#5b8dbe" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="940" y="-196.5" font-size="15" font-weight="400" fill="#e6edf3">**3. Diễn đạt rõ ràng**</tspan><tspan x="940" y="-175.5" font-size="15" font-weight="400" fill="#e6edf3">Phơi bày những điều</tspan><tspan x="940" y="-154.5" font-size="15" font-weight="400" fill="#e6edf3">bạn tưởng đã hiểu</tspan></text></g><g><rect x="760" y="-100" width="360" height="160" rx="14" fill="#161b22" stroke="#6fbf73" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="940" y="-36.5" font-size="15" font-weight="400" fill="#e6edf3">**4. Học nhanh hơn**</tspan><tspan x="940" y="-15.5" font-size="15" font-weight="400" fill="#e6edf3">Protégé Effect:</tspan><tspan x="940" y="5.5" font-size="15" font-weight="400" fill="#e6edf3">dạy = nhớ sâu hơn</tspan></text></g><g><rect x="-540" y="-260" width="320" height="140" rx="14" fill="#161b22" stroke="#d9bb3f" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="-380" y="-199" font-size="18" font-weight="700" fill="#d9bb3f">Digital Leverage</tspan><tspan x="-380" y="-172" font-size="15" font-weight="400" fill="#e6edf3">*Đòn bẩy số*</tspan></text></g><g><rect x="-540" y="60" width="320" height="180" rx="14" fill="#161b22" stroke="#e0954a" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="-380" y="133.5" font-size="15" font-weight="400" fill="#e6edf3">💰 Không cần triệu follower</tspan><tspan x="-380" y="154.5" font-size="15" font-weight="400" fill="#e6edf3">5.000–10.000 đúng tệp</tspan><tspan x="-380" y="175.5" font-size="15" font-weight="400" fill="#e6edf3">→ đủ thay thu nhập cũ</tspan></text></g><g><rect x="-980" y="-60" width="320" height="160" rx="14" fill="#161b22" stroke="#d9bb3f" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="-820" y="3.5" font-size="15" font-weight="400" fill="#e6edf3">✍️ Viết = con đường</tspan><tspan x="-820" y="24.5" font-size="15" font-weight="400" fill="#e6edf3">dễ nhất để xây</tspan><tspan x="-820" y="45.5" font-size="15" font-weight="400" fill="#e6edf3">digital leverage</tspan></text></g><g><rect x="-980" y="-420" width="320" height="240" rx="14" fill="#161b22" stroke="#a98edb" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="-820" y="-337.5" font-size="15" font-weight="400" fill="#e6edf3">Old: Bất động sản, nhà máy</tspan><tspan x="-820" y="-316.5" font-size="15" font-weight="400" fill="#e6edf3">→ tuyến tính, cục bộ</tspan><tspan x="-820" y="-295.5" font-size="15" font-weight="400" fill="#e6edf3"></tspan><tspan x="-820" y="-274.5" font-size="15" font-weight="400" fill="#e6edf3">New: Audience, Content, IP</tspan><tspan x="-820" y="-253.5" font-size="15" font-weight="400" fill="#e6edf3">→ scale vô hạn, chi phí ~0</tspan></text></g><g><rect x="760" y="-640" width="360" height="140" rx="14" fill="#161b22" stroke="#5b8dbe" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="940" y="-586.5" font-size="15" font-weight="400" fill="#e6edf3">**1. Forced Linearity**</tspan><tspan x="940" y="-565.5" font-size="15" font-weight="400" fill="#e6edf3">Bắt não sắp xếp tư duy</tspan><tspan x="940" y="-544.5" font-size="15" font-weight="400" fill="#e6edf3">th ành dòng chảy rõ ràng</tspan></text></g><g><rect x="760" y="-440" width="360" height="140" rx="14" fill="#161b22" stroke="#5b8dbe" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="940" y="-386.5" font-size="15" font-weight="400" fill="#e6edf3">**2. Pattern Recognition**</tspan><tspan x="940" y="-365.5" font-size="15" font-weight="400" fill="#e6edf3">Nhìn thấy cấu trúc,</tspan><tspan x="940" y="-344.5" font-size="15" font-weight="400" fill="#e6edf3">ẩn dụ trong đời thường</tspan></text></g><g><rect x="320" y="200" width="280" height="150" rx="14" fill="#161b22" stroke="#4aa3c4" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="460" y="266" font-size="18" font-weight="700" fill="#4aa3c4">Hệ thống viết</tspan><tspan x="460" y="293" font-size="15" font-weight="400" fill="#e6edf3">*3 bước thực chiến*</tspan></text></g><g><rect x="760" y="480" width="360" height="120" rx="14" fill="#161b22" stroke="#4aa3c4" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="940" y="523.5" font-size="15" font-weight="400" fill="#e6edf3">**3. Repurpose**</tspan><tspan x="940" y="544.5" font-size="15" font-weight="400" fill="#e6edf3">Newsletter → X → YouTube</tspan><tspan x="940" y="565.5" font-size="15" font-weight="400" fill="#e6edf3">→ Podcast → Social posts</tspan></text></g><g><rect x="760" y="100" width="360" height="175" rx="14" fill="#161b22" stroke="#5b8dbe" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="940" y="171" font-size="15" font-weight="400" fill="#e6edf3">**1. Chọn chủ đề**</tspan><tspan x="940" y="192" font-size="15" font-weight="400" fill="#e6edf3">Market demand</tspan><tspan x="940" y="213" font-size="15" font-weight="400" fill="#e6edf3">+ Góc nhìn cá nhân</tspan></text></g><g><rect x="760" y="300" width="360" height="150" rx="14" fill="#161b22" stroke="#5b8dbe" stroke-width="2.5"></rect><text text-anchor="middle" font-family="'Source Sans Pro',system-ui,sans-serif"><tspan x="940" y="358.5" font-size="15" font-weight="400" fill="#e6edf3">**2. Một project/tuần**</tspan><tspan x="940" y="379.5" font-size="15" font-weight="400" fill="#e6edf3">Mọi ý tưởng hội tụ</tspan><tspan x="940" y="400.5" font-size="15" font-weight="400" fill="#e6edf3">về 1 chủ đề duy nhất</tspan></text></g></g></svg></div></figure>
+<blockquote class="callout tip" data-callout="tip">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>💡 Insight &amp; Góc nhìn đa chiều </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p><strong>Xu hướng:</strong> Creator economy đang dân chủ hóa leverage — lần đầu tiên trong lịch sử, người không có vốn lớn, không có kết nối, vẫn xây được tài sản sinh lời chỉ bằng ý tưởng và sự nhất quán.</p>
+<p><strong>Ai được lợi:</strong> Người sớm đầu tư vào viết và xây personal brand trong giai đoạn này. Khi AI flood thị trường content, <em>giọng nói thật</em> và <em>góc nhìn có chiều sâu</em> sẽ trở thành khan hiếm.</p>
+<p><strong>Điều ẩn:</strong> Bài này thực ra là phễu marketing cho bootcamp + tool “Eden” của Dan Koe. Nhưng ironically, nó chứng minh đúng luận điểm của chính nó — Dan Koe đang dùng writing leverage để bán khóa học, và bài viết này là ví dụ sống về cách nó vận hành.</p>
+<p><strong>AI reshapes writing leverage:</strong> Trong kỷ nguyên AI, writing skill không giảm giá trị mà tăng — vì prompt engineering, direction-setting, và critical thinking đều đòi hỏi khả năng viết rõ ràng. Người viết tốt sẽ dùng AI hiệu quả hơn người không viết.</p>
+</div>
+</blockquote>
+<blockquote class="callout warning" data-callout="warning">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>⚖️ Phản biện </p></div>
+                  
+                </div>
+<div class="callout-content">
+<ul>
+<li><strong>Survivorship bias nặng:</strong> “Tôi đủ sống ở mốc 5.000 follower” không phải mô hình nhân rộng được. Dan Koe viết tiếng Anh, target thị trường Mỹ, bán khóa học make money online — những yếu tố này không sao chép tự do được</li>
+<li><strong>Đơn giản hóa cross-platform:</strong> “Viết một lần, dùng cho mọi nền tảng” bỏ qua thực tế mỗi platform có format, thuật toán và audience behavior khác nhau. Cross-posting thô không bằng cross-platform strategy thực sự</li>
+<li><strong>“Viết là leverage dễ nhất”</strong> — đúng về chi phí gia nhập, sai về độ khó đạt kết quả. Viết tốt cần đọc nhiều, sống nhiều, và hàng trăm lần thất bại. Barrier to entry thấp không đồng nghĩa với dễ thành công</li>
+<li><strong>Psycho-cybernetics là metaphor, không phải khoa học:</strong> Ẩn dụ “tâm trí như tên lửa tầm nhiệt” không có nền tảng neuroscience vững chắc — đây là self-help framework thập niên 1960, không phải nghiên cứu peer-reviewed</li>
+<li>Không đề cập monetization thực tế ở thị trường Việt Nam (payment gateway, currency conversion, tax, thị trường nhỏ)</li>
+</ul>
+</div>
+</blockquote>
+<blockquote class="callout question" data-callout="question">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>❓ Câu hỏi mở </p></div>
+                  
+                </div>
+<div class="callout-content">
+<ol>
+<li>Khi AI có thể viết nhanh và tốt hơn phần lớn con người, liệu “viết như kỹ năng tư duy” vẫn còn là leverage — hay chỉ <em>thinking</em> và <em>judgment</em> mới là thứ còn lại có giá trị?</li>
+<li>Ở Việt Nam, con đường writing-based leverage cụ thể là gì: viết tiếng Anh (reach rộng, cạnh tranh cao) hay tiếng Việt (niche nhỏ, ít monetization tool)?</li>
+<li>“Digital assets khó bị đánh thuế hơn physical assets” — khi các chính phủ (kể cả VN) đang siết thuế kinh tế số mạnh hơn, luận điểm này còn đúng đến đâu?</li>
+</ol>
+</div>
+</blockquote>
+<blockquote class="callout note" data-callout="note">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>🇻🇳 Liên hệ Việt Nam </p></div>
+                  
+                </div>
+<div class="callout-content">
+<ul>
+<li><strong>Creator economy VN đang nổi:</strong> LinkedIn VN tăng trưởng mạnh, newsletter tiếng Việt như Bite/The Saigon Review bắt đầu có paid subscriber — thị trường còn non nhưng đang hình thành rõ</li>
+<li><strong>Mô hình phổ biến VN:</strong> Thay vì “follower → direct income” như Dan Koe, người Việt thường đi “viết → thought leadership → consulting/khóa học B2B” — chuyển đổi chậm hơn nhưng ít rủi ro hơn</li>
+<li><strong>Lao động tri thức VN và AI:</strong> Khi AI tự động hóa công việc gia công thông tin, kỹ năng synthesize và communicate ideas (tức là viết) trở thành differentiator thực sự trong thị trường lao động VN</li>
+<li><strong>Cơ hội tiếng Anh bị bỏ ngỏ:</strong> Người Việt viết được tiếng Anh tốt có thể tiếp cận audience toàn cầu — đây là asymmetric opportunity so với mức thu nhập tại VN</li>
+</ul>
+</div>
+</blockquote>
+<blockquote class="callout info" data-callout="info">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>📖 Giải thích thuật ngữ </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p><strong>Leverage (đòn bẩy):</strong> Thứ giúp nhân sức mạnh mà không cần tăng công sức tỷ lệ 1:1. Ví dụ: một bài viết tốt có thể được 10.000 người đọc dù bạn chỉ viết một lần.
+<strong>Personal brand:</strong> Danh tiếng cá nhân trên mạng — khi người ta nghe tên bạn, họ liên tưởng đến điều gì? Đó là brand của bạn.
+<strong>Forced linearity:</strong> Khi viết, bạn buộc phải sắp xếp suy nghĩ thành chuỗi A→B→C, không thể nhảy lung tung như trong đầu. Đây là cơ chế giúp viết rèn tư duy.
+<strong>Protégé effect:</strong> Hiệu ứng có nghiên cứu khoa học — học sinh dạy lại tài liệu ghi nhớ sâu hơn học sinh chỉ ôn lại. Dạy = học sâu hơn.
+<strong>Psycho-cybernetics:</strong> Lý thuyết của Maxwell Maltz (1960) rằng tâm trí hoạt động như “servo-mechanism” tự tìm đường đến mục tiêu đã được lập trình. Metaphor self-help, không phải khoa học chặt chẽ.
+<strong>Digital leverage / Tài sản số:</strong> Content, audience, code, data, IP — tài sản có thể scale vô hạn với chi phí biên gần bằng 0.</p>
+</div>
+</blockquote></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Biểu Đồ</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-27" aria-expanded="true"><h3>Bảng Nội Dung</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-1" class="toc-content overflow"><li class="depth-0"><a href="#leverage-đòn-bẩy-cũ-vs-leverage-mới-bí-mật-của-thành-công-thời-hiện-đại" data-for="leverage-đòn-bẩy-cũ-vs-leverage-mới-bí-mật-của-thành-công-thời-hiện-đại">Leverage (đòn bẩy) cũ vs. leverage mới: bí mật của thành công thời hiện đại</a></li><li class="depth-0"><a href="#viết-thay-đổi-tận-gốc-bộ-não--cuộc-đời-bạn-như-thế-nào" data-for="viết-thay-đổi-tận-gốc-bộ-não--cuộc-đời-bạn-như-thế-nào">Viết thay đổi tận gốc bộ não &amp; cuộc đời bạn như thế nào</a></li><li class="depth-1"><a href="#1-viết-tái-lập-trình-cách-bạn-tư-duy" data-for="1-viết-tái-lập-trình-cách-bạn-tư-duy">1) Viết tái lập trình cách bạn tư duy</a></li><li class="depth-1"><a href="#2-viết-nâng-cao-khả-năng-nhận-diện-pattern" data-for="2-viết-nâng-cao-khả-năng-nhận-diện-pattern">2) Viết nâng cao khả năng nhận diện pattern</a></li><li class="depth-1"><a href="#3-viết-giúp-bạn-diễn-đạt-rõ-suy-nghĩ" data-for="3-viết-giúp-bạn-diễn-đạt-rõ-suy-nghĩ">3) Viết giúp bạn diễn đạt rõ suy nghĩ</a></li><li class="depth-1"><a href="#4-viết-giúp-bạn-học-nhanh-hơn" data-for="4-viết-giúp-bạn-học-nhanh-hơn">4) Viết giúp bạn học nhanh hơn</a></li><li class="depth-0"><a href="#hệ-thống-viết-tôi-dùng-để-tạo-ra-những-ý-tưởng-người-ta-không-thể-không-đọc" data-for="hệ-thống-viết-tôi-dùng-để-tạo-ra-những-ý-tưởng-người-ta-không-thể-không-đọc">Hệ thống viết tôi dùng để tạo ra những ý tưởng người ta không thể không đọc</a></li><li class="depth-1"><a href="#1-chọn-viết-về-điều-gì" data-for="1-chọn-viết-về-điều-gì">1) Chọn viết về điều gì</a></li><li class="depth-1"><a href="#2-tạo-một-project-duy-nhất-cho-cả-tuần" data-for="2-tạo-một-project-duy-nhất-cho-cả-tuần">2) Tạo một project duy nhất cho cả tuần</a></li><li class="depth-1"><a href="#3-lên-dàn-ý-viết-và-tái-sử-dụng" data-for="3-lên-dàn-ý-viết-và-tái-sử-dụng">3) Lên dàn ý, viết, và tái sử dụng</a></li><li class="depth-0"><a href="#-phân-tích-bài-viết" data-for="-phân-tích-bài-viết">🔍 Phân tích bài viết</a></li><li class="depth-1"><a href="#️-mindmap" data-for="️-mindmap">🗺️ Mindmap</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>© 2026 Tạo và Như Ý</p><ul></ul></footer></div></div></body><script type="application/javascript">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>
